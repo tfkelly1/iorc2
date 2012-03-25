@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Taxon:</b>
+  <%= @record.taxon %>
+</p>
+
+<p>
+  <b>Site:</b>
+  <%= @record.site %>
+</p>
+
+
+
+
+<%= link_to 'Edit', edit_record_path(@record) %> |
+<%= link_to 'Back', records_path %>

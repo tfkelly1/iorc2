@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  taxon: MyString
+  site: MyString
+  quantity: 
+
+two:
+  taxon: MyString
+  site: MyString
+  quantity: 
