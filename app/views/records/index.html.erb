@@ -1,24 +1,84 @@
+
+<script type="text/javascript" charset="utf-8">
+
+var asInitVals = new Array();
+$(document).ready(function() {
+	var oTable = $('#example').dataTable( {
+		"oLanguage": {
+			"sSearch": "Search all columns:"
+		},
+		"bJQueryUI": true
+	} );
+	
+	$("tfoot input").keyup( function () {
+		/* Filter on the column (the index) of this element */
+		oTable.fnFilter( this.value, $("tfoot input").index(this) );
+	} );
+	
+	
+	
+	/*
+	 * Support functions to provide a little bit of 'user friendlyness' to the textboxes in 
+	 * the footer
+	 */
+	$("tfoot input").each( function (i) {
+		asInitVals[i] = this.value;
+	} );
+	
+	$("tfoot input").focus( function () {
+		if ( this.className == "search_init" )
+		{
+			this.className = "";
+			this.value = "";
+		}
+	} );
+	
+	$("tfoot input").blur( function (i) {
+		if ( this.value == "" )
+		{
+			this.className = "search_init";
+			this.value = asInitVals[$("tfoot input").index(this)];
+		}
+	} );
+} );
+</script>
+
+
+
 <h1>Listing records</h1>
+<div class="demo_jui">
+<table id="example"  cellpadding="0" cellspacing="0" border="0" class="display">
+	<thead>
+  		<tr>
+    		<th>Taxon</th>
+    		<th>Site</th>
+    		<th>Status</th>
+    		<th>Quantity</th>
+  		</tr>
+	</thead>
 
-<table>
-  <tr>
-    <th>Taxon</th>
-    <th>Site</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<tbody>
+	<% @records.each do |record| %>
+  		<tr>
+    		<td><%= record.taxon %></td>
+    		<td><%= record.site %></td>
+			<td><%= record.status %></td>
+			<td><%= record.quantity %></td>
+  		</tr>
+	<% end %>
+</tbody>
+<tfoot>
+	<tr>
+		<th><input type="text" name="search_engine" value="Search Taxons" class="search_init" /></th>
+		<th><input type="text" name="search_browser" value="Search Sites" class="search_init" /></th>
+		<th><input type="text" name="search_platform" value="Search Status" class="search_init" /></th>
+		<th><input type="text" name="search_version" value="Search Quantity" class="search_init" /></th>
+	</tr>
+</tfoot>
 
-<% @records.each do |record| %>
-  <tr>
-    <td><%= record.taxon %></td>
-    <td><%= record.site %></td>
-    <td><%= link_to 'Show', record %></td>
-    <td><%= link_to 'Edit', edit_record_path(record) %></td>
-    <td><%= link_to 'Destroy', record, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
 </table>
+
+</div>
 
 <br />
 
