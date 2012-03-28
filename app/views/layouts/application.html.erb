@@ -10,6 +10,17 @@
 		@import "http://datatables.net/release-datatables/media/css/demo_page.css"; @import "http://datatables.net/media/css/header.ccss";
 		@import "http://datatables.net/release-datatables/media/css/demo_table_jui.css";
 		@import "http://datatables.net/release-datatables/examples/examples_support/themes/smoothness/jquery-ui-1.8.4.custom.css;
+		@import "http://my-free-css-templates.com/previews/122/default.css";
+		
+		#sidebar {
+			float: left;
+			width: 160px;
+		}
+		
+		#content {
+			float: right;
+			width: 820px;
+		}
 	</style>
 
 <!-- DataTables -->
@@ -17,8 +28,27 @@
 
 </head>
 <body id="dt_example">
+<div id="page">
+<div id="sidebar">
+	<div id="logo">
+		<h1><a href="#">IORC</a></h1>
+		<h2><a href="www.illinoisbirds.org/">The Illinois Ornithological Society</a></h2>
+	</div>
+<div id="menu">
+	<ul>
+		<li class="first"><a href="#">Home</a></li>
+		<li><a href="#">Taxons</a></li>
+		<li><a href="#">Sites</a></li>
+		<li><a href="#">Counties</a></li>
+		<li><a href="#">Statuses</a></li>
+		<li><a href="#">Submitters</a></li>
+		<li><a href="#">Submit</a></li>
+		<li><a href="#">Contact Us</a></li>
+	</ul>
+</div>  <!--menu -->
+</div>	<!-- sidebar-->
 
 <%= yield %>
-
+</div>   <!-- page  -->
 </body>
 </html>
