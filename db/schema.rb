@@ -11,15 +11,42 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120326224340) do
+ActiveRecord::Schema.define(:version => 20120422014915) do
 
-  create_table "records", :force => true do |t|
-    t.string   "taxon"
-    t.string   "site"
+  create_table "birds", :force => true do |t|
+    t.string   "common"
+    t.string   "scientific"
+    t.integer  "sequence"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-    t.string   "status"
-    t.string   "quantity"
+  end
+
+  create_table "records", :force => true do |t|
+    t.integer  "status_id",  :null => false
+    t.integer  "quantity",   :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "bird_id"
+  end
+
+  create_table "specifics", :force => true do |t|
+    t.string   "commonname"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "statuses", :force => true do |t|
+    t.string   "name",        :null => false
+    t.string   "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "taxons", :force => true do |t|
+    t.string   "scientificname"
+    t.integer  "specific_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
 end

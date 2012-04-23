@@ -1,11 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  taxon: MyString
-  status_id: 1
-  quantity: 1
+  commonname: MyString
 
 two:
-  taxon: MyString
-  status_id: 1
-  quantity: 1
+  commonname: MyString

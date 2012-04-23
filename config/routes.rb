@@ -1,5 +1,15 @@
 Iorc2::Application.routes.draw do
+  resources :birds
+
+  resources :taxons
+
+  resources :specifics
+
+  resources :statuses
+
   resources :records
+  
+  resources :record_statuses
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

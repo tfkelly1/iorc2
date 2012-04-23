@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Common:</b>
+  <%= @bird.common %>
+</p>
+
+<p>
+  <b>Scientific:</b>
+  <%= @bird.scientific %>
+</p>
+
+<p>
+  <b>Sequence:</b>
+  <%= @bird.sequence %>
+</p>
+
+
+<%= link_to 'Edit', edit_bird_path(@bird) %> |
+<%= link_to 'Back', birds_path %>

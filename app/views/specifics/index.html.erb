@@ -1,0 +1,23 @@
+<h1>Listing specifics</h1>
+
+<table>
+  <tr>
+    <th>Commonname</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @specifics.each do |specific| %>
+  <tr>
+    <td><%= specific.commonname %></td>
+    <td><%= link_to 'Show', specific %></td>
+    <td><%= link_to 'Edit', edit_specific_path(specific) %></td>
+    <td><%= link_to 'Destroy', specific, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Specific', new_specific_path %>

@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Scientificname:</b>
+  <%= @taxon.scientificname %>
+</p>
+
+<p>
+  <b>Specific:</b>
+  <%= @taxon.specific_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_taxon_path(@taxon) %> |
+<%= link_to 'Back', taxons_path %>
