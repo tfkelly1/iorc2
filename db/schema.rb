@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120422014915) do
+ActiveRecord::Schema.define(:version => 20120530001359) do
 
   create_table "birds", :force => true do |t|
     t.string   "common"
@@ -21,12 +21,28 @@ ActiveRecord::Schema.define(:version => 20120422014915) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "counties", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "counties_records", :id => false, :force => true do |t|
+    t.integer "county_id"
+    t.integer "record_id"
+  end
+
   create_table "records", :force => true do |t|
     t.integer  "status_id",  :null => false
     t.integer  "quantity",   :null => false
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "bird_id"
+    t.string   "age_gender"
+    t.string   "finders"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.text     "details"
   end
 
   create_table "specifics", :force => true do |t|

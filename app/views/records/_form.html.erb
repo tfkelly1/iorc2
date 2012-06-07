@@ -1,16 +1,91 @@
 
+<%= stylesheet_link_tag "jquery.multiSelect.css" %>
+<%= stylesheet_link_tag "jquery-ui-1.8.19.custom.css" %>
+
+<style>
+
+	div.multiSelectOptions label input {
+		display: inline;
+	}
+	
+	iframe {
+	  width: 400px;
+	}
+	
+</style>
 
 
-<%= semantic_form_for @record do |f| %>
-  <%= f.inputs do %>
-	<%= f.input :status, :include_blank => false %>
-	<%= f.input :bird, :include_blank => false, :member_label => :common %>
-    <%= f.input :quantity %>
-  <% end %>
 
-  <%= f.actions do %>
-    <%= f.action :submit, :as => :input %>
-  <% end %>
+<div>
+
+	
+<h1> Add Record </h1>
+
+<%= form_for @record do |f| %>
+
+	<%= f.label :Bird %>
+	<%= select("record", "bird_id", Bird.all.collect {|b| [ b.common, b.id ] }, {:include_blank => 'None'}) %>
+	    <%= f.label :status %>
+	<%= select("record", "status_id", Status.all.collect {|s| [ s.name, s.id ] }, {:include_blank => 'None'}) %>
+	
+	<%= f.label :Quantity %>
+    <%= f.text_field :quantity %>
+
+	<%= f.label :Start_Date %>
+	<%= f.text_field :start_date %>
+	
+	<%= f.label :End_Date %>
+	<%= f.text_field :end_date %>
+	
+	<%= f.label :Age_and_Gender %>
+	<%= f.text_field :age_gender %>
+	
+	<%= f.label :finders %>
+	<%= f.text_field :finders %>
+
+	<%= f.label :Counties %>
+	<%= select("record", "county_ids", County.all.collect {|c| [ c.name, c.id ] }, {:include_blank => 'None'}, {:multiple =>true}) %>
+	
+	</br>
+	</br>
+	
+	<%= f.label :Details %>
+	<div id="wysihtml-editor">
+	<div id="wysihtml5-toolbar" style="display: none;">
+	  <a data-wysihtml5-command="bold">bold</a> |
+	  <a data-wysihtml5-command="italic">italic</a> |
+
+      <a data-wysihtml5-command="insertUnorderedList">insertUnorderedList</a> |
+      <a data-wysihtml5-command="insertOrderedList">insertOrderedList</a> |
+
+	  <!-- Some wysihtml5 commands like 'createLink' require extra paramaters specified by the user (eg. href) -->
+	  <a data-wysihtml5-command="createLink">insert link</a>
+	  <div data-wysihtml5-dialog="createLink" style="display: none;">
+	    <label>
+	      Link:
+	      <input data-wysihtml5-dialog-field="href" value="http://" class="text">
+	    </label>
+	    <a data-wysihtml5-dialog-action="save">OK</a> <a data-wysihtml5-dialog-action="cancel">Cancel</a>
+	  </div>
+	</div>
+
+	<%= f.text_area :details %>
+	</div>
+	
+	</br>
+	</br>
+  <%= f.submit "Submit", class: "btn btn-large btn-primary"%>
+
+
+
+
+
 <% end %>
+
+
+</div>  <!-- content  -->
+
+
+
 
 

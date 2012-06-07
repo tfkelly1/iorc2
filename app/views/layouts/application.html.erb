@@ -4,12 +4,12 @@
   <title>Iorc2</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
+
+
   <%= csrf_meta_tags %>
 
 	<style type="text/css" title="currentStyle">
-		@import "http://datatables.net/release-datatables/media/css/demo_page.css"; @import "http://datatables.net/media/css/header.ccss";
-		@import "http://datatables.net/release-datatables/media/css/demo_table_jui.css";
-		@import "http://datatables.net/release-datatables/examples/examples_support/themes/smoothness/jquery-ui-1.8.4.custom.css;
+
 		@import "http://my-free-css-templates.com/previews/122/default.css";
 		
 		#sidebar {
@@ -17,9 +17,14 @@
 			width: 160px;
 		}
 		
-		#content {
+		#header {
 			float: right;
 			width: 820px;
+		}
+		
+		#content {
+			float: right;
+			width: 980px;
 		}
 
 		th {text-decoration:underline;}
@@ -27,31 +32,34 @@
 		</style>
 	</style>
 
-<!-- DataTables -->
-<script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.8.2/jquery.dataTables.min.js"></script>
+
+
+
+
+
 
 </head>
-<body id="dt_example">
+<body>
 <div id="page">
 <div id="sidebar">
 	<div id="logo">
 		<h1><a href="#">IORC</a></h1>
-		<h2><a href="www.illinoisbirds.org/">The Illinois Ornithological Society</a></h2>
+		<h2><a href="http://www.illinoisbirds.org/">The Illinois Ornithological Society</a></h2>
 	</div>
-<div id="menu">
-	<ul>
-		<li class="first"><a href="#">Home</a></li>
-		<li><a href="#">Taxons</a></li>
-		<li><a href="#">Sites</a></li>
-		<li><a href="#">Counties</a></li>
-		<li><a href="#">Statuses</a></li>
-		<li><a href="#">Submitters</a></li>
-		<li><a href="#">Submit</a></li>
-		<li><a href="#">Contact Us</a></li>
-	</ul>
-</div>  <!--menu -->
+
 </div>	<!-- sidebar-->
 
+<div id="header" >
+	<div style="float:right"><img src="http://my-free-css-templates.com/previews/122/images/img08.jpg" width="820" height="220"/></div>	
+</div>
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="container-fluid">
+      <a class="brand" href="http://www.illinoisbirds.org">IOS Home</a>
+      <%= tabs %>
+    </div>
+  </div>
+</div>
 <%= yield %>
 </div>   <!-- page  -->
 </body>

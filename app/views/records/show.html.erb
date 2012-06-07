@@ -1,32 +1,47 @@
 <div id="content" >
-	<div style="float:right"><img src="http://my-free-css-templates.com/previews/122/images/img08.jpg" width="820" height="220"/></div>	
+
 
 <div class="boxed">
-<div class="demo_jui">
+
 
 
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Taxon:</b>
-  <%= @record.bird.common %>
-</p>
+<dl>
 
-<p>
-  <b>Status:</b>
-  <%= @record.status.name %>
-</p>
+  <dt>Species/Form in Question</dt>
+  <dd><%= @record.bird.common %></dd>
 
-<p>
-  <b>Quantity:</b>
-  <%= @record.quantity %>
-</p>
+</br>
+  <dt>Current Status of Record:</dt>
+  <dd><%= @record.status.name %></dd>
+
+	</br>
+  <dt>Quantity:</dt>
+  <dd><%= @record.quantity %></dd>
+	</br>
+	<dt>Counties Observed in:</dt>
+	<%  @record.counties.each do |county| %>
+	<dd><%= county.name %></dd>	
+	<% end %>
+	
+	</br>
+	
+	<dt>Date of Initial Sighting:</dt>
+	<dd><%= @record.start_date %></dd>	
+	
+	<br/>
+	
+	<dt>Details</dt>
+	<%= @record.details.html_safe %>
+
+</dl>
+
+<p> More Stuff Goes Here</p>
 
 
 <%= link_to 'Edit', edit_record_path(@record) %> |
 <%= link_to 'Back', records_path %>
 
-
-</div>
 </div>
 </div>

@@ -13,6 +13,7 @@ gem 'pg'
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
+  gem 'bootstrap-sass'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer'
@@ -37,4 +38,16 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
-gem 'formtastic'
+
+gem 'activeadmin'
+
+
+group :assets do
+  gem 'jquery-ui-rails'
+end
+
+gem 'jquery_datepicker'
+
+gem 'tabulous'
+
+
