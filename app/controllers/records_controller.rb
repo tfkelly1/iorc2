@@ -41,7 +41,6 @@ class RecordsController < ApplicationController
   # POST /records.json
   def create
     @record = Record.new(params[:record])
-    @record.counties << County.find(params[:record_county_ids]) unless params[:record_county_ids].nil?
     respond_to do |format|
       if @record.save
         format.html { redirect_to @record, notice: 'Record was successfully created.' }
@@ -57,10 +56,7 @@ class RecordsController < ApplicationController
   # PUT /records/1.json
   def update
     @record = Record.find(params[:id])
-    if params[:record_county_ids]
-      @record.counties.clear
-      @record.counties << County.find(params[:record_county_ids]) unless params[:record_county_ids].nil?
-    end
+
 
     respond_to do |format|
       if @record.update_attributes(params[:record])

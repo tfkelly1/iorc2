@@ -57,11 +57,10 @@ Tabulous.setup do |config|
       #--------------------------------------------------------------------------------------------------#
       #    TAB NAME         |    DISPLAY TEXT    |    PATH             |    VISIBLE?    |    ENABLED?    #
       #--------------------------------------------------------------------------------------------------#
-      [    :counties_tab    ,    'Counties'      ,    counties_path    ,    true        ,    true        ],
       [    :birds_tab       ,    'Birds'         ,    birds_path       ,    true        ,    true        ],
-      [    :taxons_tab      ,    'Taxons'        ,    taxons_path      ,    true        ,    true        ],
-      [    :statuses_tab    ,    'Statuses'      ,    statuses_path    ,    true        ,    true        ],
-      [    :records_tab     ,    'Records'       ,    records_path     ,    true        ,    true        ],
+      [    :records_tab     ,    'IORC Records'       ,    records_path     ,    true        ,    true        ],
+      [    :published_tab   ,    'Published Records'       ,    records_path     ,    true        ,    true        ],
+      [    :admin_tab       ,    'Admin  '       ,    records_path     ,    true        ,    true        ],
       #--------------------------------------------------------------------------------------------------#
       #    TAB NAME         |    DISPLAY TEXT    |    PATH             |    VISIBLE?    |    ENABLED?    #
       #--------------------------------------------------------------------------------------------------#

@@ -1,27 +1,165 @@
-<h1>Listing birds</h1>
+<style type="text/css" title="currentStyle">
 
-<table>
-  <tr>
-    <th>Common</th>
-    <th>Scientific</th>
-    <th>Sequence</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+	@import "http://datatables.net/media/css/header.ccss";
+	@import "http://datatables.net/release-datatables/media/css/demo_table_jui.css";
 
-<% @birds.each do |bird| %>
-  <tr>
-    <td><%= bird.common %></td>
-    <td><%= bird.scientific %></td>
-    <td><%= bird.sequence %></td>
-    <td><%= link_to 'Show', bird %></td>
-    <td><%= link_to 'Edit', edit_bird_path(bird) %></td>
-    <td><%= link_to 'Destroy', bird, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
-</table>
+
+	
+	div.dataTables_length label {
+		float: left;
+		text-align: left;
+	}
+
+	div.dataTables_length select {
+		width: 75px;
+	}
+
+	div.dataTables_filter label {
+		float: right;
+	}
+
+	div.dataTables_info {
+		padding-top: 8px;
+	}
+
+	div.dataTables_paginate {
+		float: right;
+		margin: 0;
+	}
+	
+	tfoot input {
+	margin: 0.5em 0;
+	color: #444;
+	}
+
+	table.table {
+		clear: both;
+		margin-bottom: 6px !important;
+	}
+
+	table.table thead .sorting,
+	table.table thead .sorting_asc,
+	table.table thead .sorting_desc,
+	table.table thead .sorting_asc_disabled,
+	table.table thead .sorting_desc_disabled {
+		cursor: pointer;
+		*cursor: hand;
+	}
+
+	table.table thead .sorting { background: url('images/sort_both.png') no-repeat center right; }
+	table.table thead .sorting_asc { background: url('images/sort_asc.png') no-repeat center right; }
+	table.table thead .sorting_desc { background: url('images/sort_desc.png') no-repeat center right; }
+
+	table.table thead .sorting_asc_disabled { background: url('images/sort_asc_disabled.png') no-repeat center right; }
+	table.table thead .sorting_desc_disabled { background: url('images/sort_desc_disabled.png') no-repeat center right; }
+
+	table.dataTable th:active {
+		outline: none;
+		
+	}
+
+	</style>
+
+	
+	<script type="text/javascript" charset="utf8">
+
+
+	var asInitVals = new Array();
+	$(document).ready(function() {
+		var oTable = $('#example').dataTable( {
+				"oLanguage": {
+					"sSearch": "Search all columns:"
+					},
+					"sDom": "<'row'<'span6'l><'span6'f>r>t<'row'<'span6'i><'span6'p>>",
+					"bJQueryUI": true,
+					"sPaginationType": "bootstrap"
+		} );
+		
+		$.extend( $.fn.dataTableExt.oStdClasses, {
+			"sWrapper": "dataTables_wrapper form-inline"
+		} );
+		
+
+
+		$("tfoot input").keyup( function () {
+		/* Filter on the column (the index) of this element */
+			oTable.fnFilter( this.value, $("tfoot input").index(this) );
+		} );
+
+
+
+		/*
+		* Support functions to provide a little bit of 'user friendlyness' to the textboxes in
+		* the footer
+		*/
+		$("tfoot input").each( function (i) {
+			asInitVals[i] = this.value;
+		} );
+
+		$("tfoot input").focus( function () {
+			if ( this.className == "search_init" )
+			{
+				this.className = "";
+				this.value = "";
+			}
+		} );
+
+		$("tfoot input").blur( function (i) {
+			if ( this.value == "" ){
+				this.className = "search_init";
+				this.value = asInitVals[$("tfoot input").index(this)];
+			}
+		} );
+	} );
+	</script>
+<div id="content">
+	
+<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example">
+		<thead>
+	  		<tr>
+			    <th>Common</th>
+			    <th>Scientific</th>
+			    <th>Sequence</th>
+			    <th>Actions</th>
+				<th></th>
+				<th></th>
+	  		</tr>
+		</thead>
+
+	<tbody>
+		<% @birds.each do |bird| %>
+	  		<tr>
+			    <td><%= bird.common %></td>
+			    <td><%= bird.scientific %></td>
+			    <td><%= bird.sequence %></td>
+			    <td><%= link_to 'Show', bird %></td>
+			    <td><%= link_to 'Edit', edit_bird_path(bird) %></td>
+			    <td><%= link_to 'Destroy', bird, confirm: 'Are you sure?', method: :delete %></td>
+	  		</tr>
+		<% end %>
+	</tbody>
+
+	<tfoot>
+	<tr>
+		<th><input type="text" value="Search Common" class="search_init" /></th>
+		<th><input type="text" value="Search Scientific" class="search_init" /></th>
+		<th><input type="text" value="Search Sequence" class="search_init" /></th>
+		<th></th>
+		<th></th>
+		<th></th>
+
+
+	</tr>
+	</tfoot>
+
+
+	</table>
+
+
 
 <br />
 
 <%= link_to 'New Bird', new_bird_path %>
+
+
+</div>

@@ -1,5 +1,5 @@
 <div id="content" >
-
+<div class="row"></div>
 
 <div class="boxed">
 
@@ -12,36 +12,60 @@
   <dt>Species/Form in Question</dt>
   <dd><%= @record.bird.common %></dd>
 
-</br>
+<br/>
+
+  <dt>Scientific Name</dt>
+  <dd><%= @record.bird.scientific %></dd>
+
+<br/>
   <dt>Current Status of Record:</dt>
   <dd><%= @record.status.name %></dd>
+<br/>
+	
+	<dt>Date of Initial Sighting:</dt>
+	<dd><%= @record.start_date %></dd>
+	<br/>
 
-	</br>
-  <dt>Quantity:</dt>
-  <dd><%= @record.quantity %></dd>
-	</br>
+	<dt>Date of Last Sighting:</dt>
+	<dd><%= @record.end_date %></dd>
+	<br/>
+	
+	
+	<dt>Quantity:</dt>
+	<dd><%= @record.quantity %></dd>
+		<br/>
+	
+	<dt>Age/Gender:</dt>
+	<dd><%= @record.age_gender %></dd>
+	<br/>
+	
+	<dt>Finder(s)</dt>
+	<dd><%= @record.finders %></dd>
+	<br/>
+	
+	<dt>Location</dt>
+	<dd><%= @record.location %></dd>
+	<br/>
+
 	<dt>Counties Observed in:</dt>
-	<%  @record.counties.each do |county| %>
+	<% for county in @record.counties %>
 	<dd><%= county.name %></dd>	
 	<% end %>
 	
-	</br>
-	
-	<dt>Date of Initial Sighting:</dt>
-	<dd><%= @record.start_date %></dd>	
-	
+	<br/>
 	<br/>
 	
 	<dt>Details</dt>
-	<%= @record.details.html_safe %>
+	<dd><%= @record.details.html_safe unless @record.details.nil?%></dd>
 
 </dl>
 
-<p> More Stuff Goes Here</p>
+<p> More Stuff ????</p>
 
 
 <%= link_to 'Edit', edit_record_path(@record) %> |
 <%= link_to 'Back', records_path %>
+<%= link_to 'Destroy', @record, confirm: 'Are you sure?', method: :delete %>
 
 </div>
 </div>

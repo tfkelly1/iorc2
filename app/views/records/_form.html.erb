@@ -1,8 +1,20 @@
+<script>
+	$().ready( function() {
+		var editor = new wysihtml5.Editor("record_details", { // id of textarea element
+		  toolbar:      "wysihtml5-toolbar", // id of toolbar element
+		  parserRules:  wysihtml5ParserRules // defined in parser rules set 
+		});
+});
 
+</script>
 <%= stylesheet_link_tag "jquery.multiSelect.css" %>
 <%= stylesheet_link_tag "jquery-ui-1.8.19.custom.css" %>
 
+
 <style>
+
+@import "http://datatables.net/media/css/header.ccss";
+@import "http://datatables.net/release-datatables/media/css/demo_table_jui.css";
 
 	div.multiSelectOptions label input {
 		display: inline;
@@ -12,14 +24,28 @@
 	  width: 400px;
 	}
 	
+	#recordForm {
+		background-color:#FFFFFF;
+		width: 980px;
+	}
+	
+	#formContainer {
+		padding-left:40px;
+		padding-top: 20px;
+	}
+	
+
+	
+
+	
 </style>
 
-
-
-<div>
+<div id="recordForm">
+<div id="formContainer">
 
 	
 <h1> Add Record </h1>
+</br>
 
 <%= form_for @record do |f| %>
 
@@ -42,12 +68,15 @@
 	
 	<%= f.label :finders %>
 	<%= f.text_field :finders %>
+	
+	<%= f.label :location %>
+	<%= f.text_field :location %>
 
 	<%= f.label :Counties %>
-	<%= select("record", "county_ids", County.all.collect {|c| [ c.name, c.id ] }, {:include_blank => 'None'}, {:multiple =>true}) %>
+	<%= f.select(:county_ids, County.all.collect {|c| [ c.name, c.id ] }, {:include_blank => 'None'}, {:multiple =>true}) %>
 	
-	</br>
-	</br>
+	<br/>
+	<br/>
 	
 	<%= f.label :Details %>
 	<div id="wysihtml-editor">
@@ -72,8 +101,8 @@
 	<%= f.text_area :details %>
 	</div>
 	
-	</br>
-	</br>
+	<br/>
+	<br/>
   <%= f.submit "Submit", class: "btn btn-large btn-primary"%>
 
 
@@ -82,8 +111,13 @@
 
 <% end %>
 
-
+</div>
 </div>  <!-- content  -->
+
+
+
+
+
 
 
 

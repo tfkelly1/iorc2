@@ -1,11 +1,54 @@
-<%= semantic_form_for @bird do |f| %>
-  <%= f.inputs do %>
-    <%= f.input :common %>
-    <%= f.input :scientific %>
-    <%= f.input :sequence %>
-  <% end %>
 
-  <%= f.actions do %>
-    <%= f.action :submit, :as => :input %>
-  <% end %>
+
+
+<style>
+
+@import "http://datatables.net/media/css/header.ccss";
+@import "http://datatables.net/release-datatables/media/css/demo_table_jui.css";
+
+	div.multiSelectOptions label input {
+		display: inline;
+	}
+	
+	iframe {
+	  width: 400px;
+	}
+	
+	#recordForm {
+		background-color:#FFFFFF;
+		width: 980px;
+	}
+	
+	#formContainer {
+		padding-left:40px;
+		padding-top: 20px;
+	}
+	
+
+	
+
+	
+</style>
+
+<div id="recordForm">
+<div id="formContainer">
+<%= form_for @bird do |f| %>
+
+	<%= f.label :Common %>
+	<%= f.text_field :common %>
+	
+	<%= f.label :Scientific %>
+	<%= f.text_field :scientific %>
+	
+	<%= f.label :Sequence %>
+	<%= f.text_field :sequence %>
+	
+	<br/>
+
+  <%= f.submit "Submit", class: "btn btn-large btn-primary"%>
+  
 <% end %>
+
+
+</div>
+</div>

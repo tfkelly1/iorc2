@@ -29,8 +29,7 @@
 	
 	tfoot input {
 	margin: 0.5em 0;
-	color: 
-#444;
+	color: #444;
 	}
 
 	table.table {
@@ -123,10 +122,8 @@
   		<tr>
     		<th>Species</th>
     		<th>Status</th>
-    		<th>Quantity</th>
 			<th>Year</th>
 			<th>County</th>
-			<th>Placeholder3</th>
 			<th>Action</th>
   		</tr>
 	</thead>
@@ -136,27 +133,23 @@
   		<tr>
     		<td><%= record.bird.common %></td>
     		<td><%= record.status.name %></td>
-			<td><%= record.quantity %></td>
-			<td>2009</td>
-			<td><%  record.counties.each do |county| %>
+			<td><%= record.start_date.year unless record.start_date.nil? %></td>
+			<td><% for county in record.counties %>
 				 <%= county.name %></br>	
 				<% end %>
 			</td>
-			<td>Placeholder</td>
-			<td>View Details</td>
+			<td><%= link_to "View Details", record_path(record)%></td>
   		</tr>
 	<% end %>
 </tbody>
 
 <tfoot>
 <tr>
-<th><input type="text" value="Search Species" class="search_init" /></th>
-<th><input type="text" value="Search Status" class="search_init" /></th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
+	<th><input type="text" value="Search Species" class="search_init" /></th>
+	<th><input type="text" value="Search Status" class="search_init" /></th>
+	<th><input type="text" value="Search Year" class="search_init" /></th>
+	<th><input type="text" value="Search Counties" class="search_init" /></th>
+	<th></th>
 
 
 </tr>
