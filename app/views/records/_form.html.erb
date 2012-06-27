@@ -49,6 +49,9 @@
 
 <%= form_for @record do |f| %>
 
+	<%= f.label :number %>
+	<%= f.text_field :number %>
+
 	<%= f.label :Bird %>
 	<%= select("record", "bird_id", Bird.all.collect {|b| [ b.common, b.id ] }, {:include_blank => 'None'}) %>
 	    <%= f.label :status %>

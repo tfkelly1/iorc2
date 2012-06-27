@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120617000901) do
+ActiveRecord::Schema.define(:version => 20120626002122) do
 
   create_table "birds", :force => true do |t|
     t.string   "common"
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(:version => 20120617000901) do
     t.date     "end_date"
     t.text     "details"
     t.string   "location"
+    t.string   "number"
   end
 
   create_table "siglers", :force => true do |t|
