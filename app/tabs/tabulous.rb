@@ -86,7 +86,6 @@ Tabulous.setup do |config|
       #-------------------------------------------------------------#
       #    CONTROLLER    |    ACTION          |    TAB              #
       #-------------------------------------------------------------#
-      [    :counties     ,    :all_actions    ,    :counties_tab    ],
       [    :birds        ,    :all_actions    ,    :birds_tab       ],
       [    :taxons       ,    :all_actions    ,    :taxons_tab      ],
       [    :statuses     ,    :all_actions    ,    :statuses_tab    ],
