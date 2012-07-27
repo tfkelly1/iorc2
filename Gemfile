@@ -14,7 +14,6 @@ gem 'bootstrap-sass'
 # in production environments by default.
 group :assets do
 
-	gem 'chosen-rails'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer'
@@ -50,6 +49,8 @@ end
 gem 'jquery_datepicker'
 
 gem 'tabulous'
+
+gem 'chosen-rails'
 
 
 
