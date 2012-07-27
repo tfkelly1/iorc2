@@ -1,6 +1,7 @@
 class Record < ActiveRecord::Base
   belongs_to :status
   belongs_to :bird
+  belongs_to :reference
   has_many :siglers
   has_many :counties, :through => :siglers
   attr_reader :author_tokens

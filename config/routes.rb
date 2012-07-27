@@ -1,5 +1,11 @@
 Iorc2::Application.routes.draw do
 
+  resources :titles
+
+  resources :references
+
+  resources :publications
+
   resources :counties
 
   resources :birds

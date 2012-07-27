@@ -45,6 +45,9 @@ GEM
     bourbon (2.1.0)
       sass (>= 3.1)
     builder (3.0.0)
+    chosen-rails (0.9.8.1)
+      railties (~> 3.0)
+      thor (~> 0.14)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -156,6 +159,7 @@ PLATFORMS
 DEPENDENCIES
   activeadmin
   bootstrap-sass
+  chosen-rails
   coffee-rails (~> 3.2.1)
   jquery-rails
   jquery-ui-rails

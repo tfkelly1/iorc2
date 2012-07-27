@@ -43,12 +43,6 @@
 		</style>
 	</style>
 
-
-
-
-
-
-
 </head>
 <body>
 <div id="page">
@@ -64,13 +58,35 @@
 	<div style="float:right"><img src="http://my-free-css-templates.com/previews/122/images/img08.jpg" width="820" height="220"/></div>	
 </div>
 <div class="navbar">
-  <div class="navbar-inner">
-    <div class="container-fluid">
-      <a class="brand" href="http://www.illinoisbirds.org">IOS Home</a>
-      <%= tabs %>
-    </div>
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        <a class="brand" href="#">IOS</a>
+        <div class="nav-collapse">
+          <ul class="nav">
+            <li id="rare"><a href="/records">Rare Bird Records</a></li>
+            <li id="published"><a href="/publications">Published Records</a></li>
+            <li id="placeholder"><a href="#">Placeholder</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/birds/new">Add a Bird to Checklist</a></li>
+                <li><a href="/records/new">Create a Rare Bird Record</a></li>
+                <li><a href="/publications/new">Create a Published Record</a></li>
+				<li><a href="/references/new">Add a Volume/Reference</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!-- /.nav-collapse -->
+      </div>
+    </div><!-- /navbar-inner -->
   </div>
-</div>
+
+
 <%= yield %>
 </div>   <!-- page  -->
 </body>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120626002122) do
+ActiveRecord::Schema.define(:version => 20120726012051) do
 
   create_table "birds", :force => true do |t|
     t.string   "common"
@@ -27,11 +27,30 @@ ActiveRecord::Schema.define(:version => 20120626002122) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "records", :force => true do |t|
-    t.integer  "status_id",  :null => false
+  create_table "countypubs", :force => true do |t|
+    t.integer  "publication_id"
+    t.integer  "county_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  create_table "publications", :force => true do |t|
     t.integer  "quantity",   :null => false
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "bird_id"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.string   "observers"
+    t.text     "details"
+    t.string   "location"
+  end
+
+  create_table "records", :force => true do |t|
+    t.integer  "status_id",    :null => false
+    t.integer  "quantity",     :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
     t.integer  "bird_id"
     t.string   "age_gender"
     t.string   "finders"
@@ -40,6 +59,21 @@ ActiveRecord::Schema.define(:version => 20120626002122) do
     t.text     "details"
     t.string   "location"
     t.string   "number"
+    t.integer  "reference_id"
+  end
+
+  create_table "references", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "volume"
+    t.string   "name"
+  end
+
+  create_table "refpubs", :force => true do |t|
+    t.integer  "publication_id"
+    t.integer  "reference_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
   create_table "siglers", :force => true do |t|

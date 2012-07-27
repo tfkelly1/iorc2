@@ -1,0 +1,43 @@
+
+<%= stylesheet_link_tag "jquery.multiSelect.css" %>
+<%= stylesheet_link_tag "jquery-ui-1.8.19.custom.css" %>
+
+
+<style>
+
+@import "http://datatables.net/media/css/header.ccss";
+@import "http://datatables.net/release-datatables/media/css/demo_table_jui.css";
+
+	div.multiSelectOptions label input {
+		display: inline;
+	}
+	
+	#referenceForm {
+		background-color:#FFFFFF;
+		width: 980px;
+	}
+	
+	#formContainer {
+		padding-left:40px;
+		padding-top: 20px;
+	}
+	
+
+		
+</style>
+
+<div id="referenceForm">
+<div id="formContainer">
+		
+	
+<%= form_for @reference do |f| %>
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+	<br/>
+  	<%= f.submit "Submit", class: "btn btn-large btn-primary"%>
+<% end %>
+
+
+</div>
+</div>
+

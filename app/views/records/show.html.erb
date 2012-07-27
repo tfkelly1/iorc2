@@ -11,6 +11,7 @@
 	
   <dt>IORC Number</dt>
   <dd><%= @record.number %></dd>
+<br/>
 
   <dt>Species/Form in Question</dt>
   <dd><%= @record.bird.common %></dd>
@@ -54,6 +55,10 @@
 	<% for county in @record.counties %>
 	<dd><%= county.name %></dd>	
 	<% end %>
+	<br/>
+	
+	<dt>Published In</dt>
+  <dd><%= @record.reference.name %></dd>
 	
 	<br/>
 	<br/>
@@ -63,11 +68,11 @@
 
 </dl>
 
-<p> More Stuff ????</p>
+
 
 
 <%= link_to 'Edit', edit_record_path(@record) %> |
-<%= link_to 'Back', records_path %>
+<%= link_to 'Back', records_path %> |
 <%= link_to 'Destroy', @record, confirm: 'Are you sure?', method: :delete %>
 
 </div>

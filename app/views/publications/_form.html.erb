@@ -1,0 +1,111 @@
+<script>
+	$().ready( function() {
+		var editor = new wysihtml5.Editor("publication_details", { // id of textarea element
+		  toolbar:      "wysihtml5-toolbar", // id of toolbar element
+		  parserRules:  wysihtml5ParserRules // defined in parser rules set 
+		});
+});
+
+</script>
+<%= stylesheet_link_tag "jquery.multiSelect.css" %>
+<%= stylesheet_link_tag "jquery-ui-1.8.19.custom.css" %>
+
+
+<style>
+
+@import "http://datatables.net/media/css/header.ccss";
+@import "http://datatables.net/release-datatables/media/css/demo_table_jui.css";
+
+	div.multiSelectOptions label input {
+		display: inline;
+	}
+	
+	iframe {
+	  width: 400px;
+	}
+	
+	#recordForm {
+		background-color:#FFFFFF;
+		width: 980px;
+	}
+	
+	#formContainer {
+		padding-left:40px;
+		padding-top: 20px;
+	}
+	
+</style>
+
+<div id="recordForm">
+<div id="formContainer">
+
+</br>
+
+<%= form_for @publication do |f| %>
+
+
+	<%= f.label :Bird %>
+	<%= select("publication", "bird_id", Bird.all.collect {|b| [ b.common, b.id ] }, {:include_blank => 'None'}) %>
+	
+	<%= f.label :Quantity %>
+    <%= f.text_field :quantity %>
+
+	<%= f.label :Start_Date %>
+	<%= f.text_field :start_date %>
+	<%= f.hidden_field :start_date, :id => "alt_start_date" %>
+	
+	<%= f.label :End_Date %>
+	<%= f.text_field :end_date %>
+	<%= f.hidden_field :end_date, :id => "alt_end_date"%>
+	
+	<%= f.label :observers %>
+	<%= f.text_field :observers %>
+	
+	<%= f.label :location %>
+	<%= f.text_field :location %>
+
+	<%= f.label :Counties %>
+	<%= f.select(:county_ids, County.all.collect {|c| [ c.name, c.id ] }, {:include_blank => 'None'}, {:multiple =>true}) %>
+	
+	<%= f.label :References %>
+	<%= f.select(:reference_ids, Reference.all.collect {|r| [ r.name, r.id ] }, {:include_blank => 'None'}, {:multiple =>true}) %>
+	
+	<br/>
+	<br/>
+	
+	<%= f.label :Details %>
+	<div id="wysihtml-editor">
+	<div id="wysihtml5-toolbar" style="display: none;">
+	  <a data-wysihtml5-command="bold">bold</a> |
+	  <a data-wysihtml5-command="italic">italic</a> |
+
+      <a data-wysihtml5-command="insertUnorderedList">insertUnorderedList</a> |
+      <a data-wysihtml5-command="insertOrderedList">insertOrderedList</a> |
+
+	  <!-- Some wysihtml5 commands like 'createLink' require extra paramaters specified by the user (eg. href) -->
+	  <a data-wysihtml5-command="createLink">insert link</a>
+	  <div data-wysihtml5-dialog="createLink" style="display: none;">
+	    <label>
+	      Link:
+	      <input data-wysihtml5-dialog-field="href" value="http://" class="text">
+	    </label>
+	    <a data-wysihtml5-dialog-action="save">OK</a> <a data-wysihtml5-dialog-action="cancel">Cancel</a>
+	  </div>
+	</div>
+
+	<%= f.text_area :details %>
+	</div>
+	
+	<br/>
+	<br/>
+  <%= f.submit "Submit", class: "btn btn-large btn-primary"%>
+
+
+
+
+
+<% end %>
+
+</div>
+</div>
+

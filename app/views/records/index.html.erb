@@ -120,6 +120,7 @@
 
 	<thead>
   		<tr>
+			<th>Sequence</th>
     		<th>Species</th>
     		<th>Status</th>
 			<th>Year</th>
@@ -131,6 +132,7 @@
 <tbody>
 	<% @records.each do |record| %>
   		<tr>
+			<td><%= record.bird.sequence %></td>
     		<td><%= record.bird.common %></td>
     		<td><%= record.status.name %></td>
 			<td><%= record.start_date.year unless record.start_date.nil? %></td>
@@ -145,6 +147,7 @@
 
 <tfoot>
 <tr>
+	<th></th>
 	<th><input type="text" value="Search Species" class="search_init" /></th>
 	<th><input type="text" value="Search Status" class="search_init" /></th>
 	<th><input type="text" value="Search Year" class="search_init" /></th>

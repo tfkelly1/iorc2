@@ -43,8 +43,6 @@
 <div id="recordForm">
 <div id="formContainer">
 
-	
-<h1> Add Record </h1>
 </br>
 
 <%= form_for @record do |f| %>
@@ -62,9 +60,11 @@
 
 	<%= f.label :Start_Date %>
 	<%= f.text_field :start_date %>
+	<%= f.hidden_field :start_date, :id => "alt_start_date", :as=>:hidden %>
 	
 	<%= f.label :End_Date %>
 	<%= f.text_field :end_date %>
+	<%= f.hidden_field :end_date, :id => "alt_end_date" %>
 	
 	<%= f.label :Age_and_Gender %>
 	<%= f.text_field :age_gender %>
@@ -77,6 +77,9 @@
 
 	<%= f.label :Counties %>
 	<%= f.select(:county_ids, County.all.collect {|c| [ c.name, c.id ] }, {:include_blank => 'None'}, {:multiple =>true}) %>
+	
+	<%= f.label :Reference %>
+	<%= select("record", "reference_id", Reference.all.collect {|r| [ r.name, r.id ] }, {:include_blank => 'None'}) %>
 	
 	<br/>
 	<br/>
@@ -108,14 +111,11 @@
 	<br/>
   <%= f.submit "Submit", class: "btn btn-large btn-primary"%>
 
-
-
-
-
 <% end %>
 
 </div>
-</div>  <!-- content  -->
+</div>
+
 
 
 

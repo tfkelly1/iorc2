@@ -1,0 +1,70 @@
+<div id="content" >
+<div class="row"></div>
+
+<div class="boxed">
+
+
+
+<p id="notice"><%= notice %></p>
+
+<dl>
+
+  <dt>Species/Form</dt>
+  <dd><%= @publication.bird.common %></dd>
+	<br/>
+
+  <dt>Scientific Name</dt>
+  <dd><%= @publication.bird.scientific %></dd>
+	<br/>
+	
+	<dt>Date of Initial Sighting:</dt>
+	<dd><%= @publication.start_date %></dd>
+	<br/>
+
+	<dt>Date of Last Sighting:</dt>
+	<dd><%= @publication.end_date %></dd>
+	<br/>
+	
+	
+	<dt>Quantity:</dt>
+	<dd><%= @publication.quantity %></dd>
+	<br/>
+
+	
+	<dt>Finder(s)</dt>
+	<dd><%= @publication.observers %></dd>
+	<br/>
+	
+	<dt>Location</dt>
+	<dd><%= @publication.location %></dd>
+	<br/>
+
+	<dt>Counties Observed in:</dt>
+	<% for county in @publication.counties %>
+	<dd><%= county.name %></dd>	
+	<% end %>
+	<br/>
+	
+	<dt>References</dt>
+	<% for reference in @publication.references %>
+	<dd><%= reference.name %></dd>	
+	<% end %>
+	
+	<br/>
+	<br/>
+	
+	<dt>Details</dt>
+	<dd><%= @publication.details.html_safe unless @publication.details.nil?%></dd>
+	<br/>
+
+</dl>
+
+
+
+
+<%= link_to 'Edit', edit_publication_path(@publication) %> |
+<%= link_to 'Back', publications_path %> |
+<%= link_to 'Destroy', @publication, confirm: 'Are you sure?', method: :delete %>
+
+</div>
+</div>
