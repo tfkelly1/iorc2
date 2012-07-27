@@ -58,7 +58,7 @@
 	<br/>
 	
 	<dt>Published In</dt>
-  <dd><%= @record.reference.name %></dd>
+  <dd><%= @record.reference.name  unless record.publication.nil? %>%></dd>
 	
 	<br/>
 	<br/>
