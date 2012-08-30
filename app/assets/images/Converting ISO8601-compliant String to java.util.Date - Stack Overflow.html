@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<!-- saved from url=(0096)http://stackoverflow.com/questions/2201925/converting-iso8601-compliant-string-to-java-util-date -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" async="" src="./Converting ISO8601-compliant String to java.util.Date - Stack Overflow_files/adzerk1_2_4_43,adzerk2_2_17_45,adzerk3_2_4_44"></script><script type="text/javascript" async="" src="./Converting ISO8601-compliant String to java.util.Date - Stack Overflow_files/ga.js"></script><script type="text/javascript" async="" src="./Converting ISO8601-compliant String to java.util.Date - Stack Overflow_files/quant.js"></script><script>window.serq=[];StackExchange={ready:function(f){serq.push(f)}}</script>
+    
+    
+    <title>Converting ISO8601-compliant String to java.util.Date - Stack Overflow</title>
+    <link rel="shortcut icon" href="http://cdn.sstatic.net/stackoverflow/img/favicon.ico">
+    <link rel="apple-touch-icon" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png">
+    <link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow" href="http://stackoverflow.com/opensearch.xml">
+
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="./Converting ISO8601-compliant String to java.util.Date - Stack Overflow_files/all.css">
+    
+    <meta name="relativepagescore" content="479985">
+    <link rel="canonical" href="./Converting ISO8601-compliant String to java.util.Date - Stack Overflow_files/Converting ISO8601-compliant String to java.util.Date - Stack Overflow.html">
+    <link rel="alternate" type="application/atom+xml" title="Feed for question &#39;Converting ISO8601-compliant String to java.util.Date&#39;" href="http://stackoverflow.com/feeds/question/2201925">
+
+
+
+    
+
+<script async="" type="text/javascript" src="./Converting ISO8601-compliant String to java.util.Date - Stack Overflow_files/full.js"></script><link type="text/css" rel="stylesheet" href="chrome-extension://cpngackimfmofbokmjmljamhdncknpmg/style.css"><script type="text/javascript" charset="utf-8" src="chrome-extension://cpngackimfmofbokmjmljamhdncknpmg/page_context.js"></script><script async="" type="text/javascript" src="./Converting ISO8601-compliant String to java.util.Date - Stack Overflow_files/prettify-full.js"></script><script async="" type="text/javascript" src="./Converting ISO8601-compliant String to java.util.Date - Stack Overflow_files/wmd.js"></script><link href="./Converting ISO8601-compliant String to java.util.Date - Stack Overflow_files/sidebar.css" type="text/css" rel="stylesheet"></head>
+<body class="question-page" screen_capture_injected="true">
+    <noscript>&lt;div id="noscript-padding"&gt;&lt;/div&gt;</noscript>
+    <div id="notify-container"></div>
+    <div id="overlay-header"></div>
+    <div id="custom-header"></div>
+
+    <div class="container">
+        <div id="header">
+            <div id="portalLink">
+                <a class="genu" onclick="StackExchange.ready(function(){genuwine.click();});return false;">Stack Exchange</a>
+                        <a class="unreadCount newNotices" title="you have unread notices">1</a>
+            </div>
+            <div id="topbar">
+                <div id="hlinks">
+                    <span id="hlinks-user">
+                  <span class="profile-triangle">▾</span><a href="http://stackoverflow.com/users/1314283/user1314283" class="profile-link">user1314283</a>&nbsp;<a href="http://stackoverflow.com/users/1314283/user1314283?tab=reputation"><span class="reputation-score" title="your reputation; view reputation changes" dir="ltr">16</span></a><span title="2 bronze badges"><span class="badge3"></span><span class="badgecount">2</span></span>
+ <span class="lsep">|</span>
+
+                  </span>
+                  <span id="hlinks-nav">
+                  
+                  </span>
+                  <span id="hlinks-custom">
+                  <a href="http://chat.stackoverflow.com/">chat</a>
+ <span class="lsep">|</span>
+<a href="http://meta.stackoverflow.com/">meta</a>
+ <span class="lsep">|</span>
+<a href="http://stackoverflow.com/about">about</a>
+ <span class="lsep">|</span>
+<a href="http://stackoverflow.com/faq">faq</a>
+                  </span>
+                </div>
+                <div id="hsearch">
+                    <form id="search" action="http://stackoverflow.com/search" method="get" autocomplete="off">
+                    <div>
+                        <input autocomplete="off" name="q" class="textbox" placeholder="search" tabindex="1" type="text" maxlength="140" size="28" value="">
+                    </div>
+                    </form>
+                </div>
+            </div>
+            <br class="cbt">
+            <div id="hlogo">
+                <a href="http://stackoverflow.com/">Stack Overflow</a>
+            </div>
+            <div id="hmenus">
+                <div class="nav mainnavs">
+                    <ul>
+                        <li class="youarehere"><a id="nav-questions" href="http://stackoverflow.com/questions">Questions</a></li>
+                        <li><a id="nav-tags" href="http://stackoverflow.com/tags">Tags</a></li>
+                        <li><a id="nav-users" href="http://stackoverflow.com/users">Users</a></li>
+                        <li><a id="nav-badges" href="http://stackoverflow.com/badges">Badges</a></li>
+                        <li><a id="nav-unanswered" href="http://stackoverflow.com/unanswered">Unanswered</a></li>
+                    </ul>
+                </div>
+                <div class="nav askquestion">
+                    <ul>
+                        <li>
+                            <a id="nav-askquestion" href="http://stackoverflow.com/questions/ask">Ask Question</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        
+
+
+        <div id="content">
+            
+            
+
+
+<div itemscope="" itemtype="http://schema.org/Article">
+<link itemprop="image" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png">
+<div id="question-header">
+    <h1 itemprop="name"><a href="./Converting ISO8601-compliant String to java.util.Date - Stack Overflow_files/Converting ISO8601-compliant String to java.util.Date - Stack Overflow.html" class="question-hyperlink">Converting ISO8601-compliant String to java.util.Date</a></h1>
+</div>
+<div id="mainbar">
+
+
+<div class="question" id="question" data-questionid="2201925">
+
+    <div class="everyonelovesstackoverflow" id="adzerk1">
+    <iframe frameborder="0" scrolling="no" height="90" width="728" src="javascript:window["contents"]"></iframe></div>
+
+    
+    <table>
+    <tbody><tr>
+    <td class="votecell">
+        
+
+<div class="vote">
+    <input type="hidden" value="2201925">
+    <a class="vote-up-off" title="This question shows research effort; it is useful and clear (click again to undo)">up vote</a>
+    <span class="vote-count-post">70</span>
+    <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful (click again to undo)">down vote</a>
+    <a class="star-off" href="http://stackoverflow.com/questions/2201925/converting-iso8601-compliant-string-to-java-util-date#" title="This is a favorite question (click again to undo)">favorite</a>
+    <div class="favoritecount"><b>27</b></div>   
+ 
+</div>
+
+    </td>
+<td class="postcell">
+<div>          
+    <div class="post-text" itemprop="description">
+        <p>I am trying to convert an ISO8601 formatted String to a java.util.Date. I found the pattern
+"yyyy-MM-dd'T'HH:mm:ssZ" to be ISO8601-compliant if used with a Locale (compare sample).
+However, using the java.text.SimpleDateFormat, I cannot convert the correctly formatted String "2010-01-01T12:00:00+01:00". I have to convert it first to "2010-01-01T12:00:00+0100", without the colon. 
+So, the current solution is</p>
+
+<pre class="lang-java prettyprint"><code><span class="typ">SimpleDateFormat</span><span class="pln"> ISO8601DATEFORMAT </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">SimpleDateFormat</span><span class="pun">(</span><span class="str">"yyyy-MM-dd'T'HH:mm:ssZ"</span><span class="pun">,</span><span class="pln"> </span><span class="typ">Locale</span><span class="pun">.</span><span class="pln">GERMANY</span><span class="pun">);</span><span class="pln"><br></span><span class="typ">String</span><span class="pln"> date </span><span class="pun">=</span><span class="pln"> </span><span class="str">"2010-01-01T12:00:00+01:00"</span><span class="pun">.</span><span class="pln">replaceAll</span><span class="pun">(</span><span class="str">"\\+0([0-9]){1}\\:00"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"+0$100"</span><span class="pun">);</span><span class="pln"><br></span><span class="typ">System</span><span class="pun">.</span><span class="pln">out</span><span class="pun">.</span><span class="pln">println</span><span class="pun">(</span><span class="pln">ISO8601DATEFORMAT</span><span class="pun">.</span><span class="pln">parse</span><span class="pun">(</span><span class="pln">date</span><span class="pun">));</span><span class="pln"><br></span></code></pre>
+
+<p>which obviously isn't that nice. Am I missing something or is there a better solution?</p>
+
+<p><strong>answer</strong></p>
+
+<p>Thanks to JuanZe's comment, I found the JodaTime-magic, it is also <a href="http://johannburkard.de/blog/programming/java/date-time-parsing-formatting-joda-time.html">described here</a>.
+So, the solution is</p>
+
+<pre class="lang-java prettyprint"><code><span class="typ">DateTimeFormatter</span><span class="pln"> parser2 </span><span class="pun">=</span><span class="pln"> </span><span class="typ">ISODateTimeFormat</span><span class="pun">.</span><span class="pln">dateTimeNoMillis</span><span class="pun">();</span><span class="pln"><br></span><span class="typ">String</span><span class="pln"> jtdate </span><span class="pun">=</span><span class="pln"> </span><span class="str">"2010-01-01T12:00:00+01:00"</span><span class="pun">;</span><span class="pln"><br></span><span class="typ">System</span><span class="pun">.</span><span class="pln">out</span><span class="pun">.</span><span class="pln">println</span><span class="pun">(</span><span class="pln">parser2</span><span class="pun">.</span><span class="pln">parseDateTime</span><span class="pun">(</span><span class="pln">jtdate</span><span class="pun">));</span><span class="pln"><br></span></code></pre>
+
+<p>To me, this is nice.</p>
+
+    </div>            
+    <div class="post-taglist">
+        <a href="http://stackoverflow.com/questions/tagged/java" class="post-tag" title="show questions tagged &#39;java&#39;" rel="tag">java</a> <a href="http://stackoverflow.com/questions/tagged/date" class="post-tag" title="show questions tagged &#39;date&#39;" rel="tag">date</a> <a href="http://stackoverflow.com/questions/tagged/iso8601" class="post-tag" title="show questions tagged &#39;iso8601&#39;" rel="tag">iso8601</a> 
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+        <div class="post-menu"><a href="http://stackoverflow.com/q/2201925/1314283" title="short permalink to this question" class="short-link" id="link-post-2201925">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/2201925/edit" title="revise and improve this post">edit</a><span class="lsep">|</span><a id="flag-post-2201925" href="http://stackoverflow.com/questions/2201925/converting-iso8601-compliant-string-to-java-util-date#" title="flag this post for serious problems or moderator attention">flag</a></div>
+    </td>
+    <td align="right" class="post-signature">
+<div class="user-info user-hover"><div class="user-action-time">edited <a href="http://stackoverflow.com/posts/2201925/revisions" title="show all edits to this post"><span title="2012-02-28 10:58:51Z" class="relativetime">Feb 28 at 10:58</span></a></div><div class="user-gravatar32"><a href="http://stackoverflow.com/users/605744/tomasz-nurkiewicz"><div class=""><img src="./Converting ISO8601-compliant String to java.util.Date - Stack Overflow_files/a0a3a4200899708103f7430d87d56e24" alt="" width="32" height="32"></div></a></div><div class="user-details"><a href="http://stackoverflow.com/users/605744/tomasz-nurkiewicz">Tomasz Nurkiewicz</a><br><span class="reputation-score" title="reputation score 67271" dir="ltr">67.3k</span><span title="5 gold badges"><span class="badge1"></span><span class="badgecount">5</span></span><span title="55 silver badges"><span class="badge2"></span><span class="badgecount">55</span></span><span title="102 bronze badges"><span class="badge3"></span><span class="badgecount">102</span></span></div></div>    </td>
+    <td class="post-signature owner">
+    <div class="user-info"><div class="user-action-time">asked <span title="2010-02-04 17:52:39Z" class="relativetime">Feb 4 '10 at 17:52</span></div><div class="user-gravatar32"><a href="http://stackoverflow.com/users/157229/ice09"><div class=""><img src="./Converting ISO8601-compliant String to java.util.Date - Stack Overflow_files/d5cb28fcaa4c9dbd796c29e31ca5eec7" alt="" width="32" height="32"></div></a></div><div class="user-details"><a href="http://stackoverflow.com/users/157229/ice09">Ice09</a><br><span class="reputation-score" title="reputation score" dir="ltr">812</span><span title="1 gold badge"><span class="badge1"></span><span class="badgecount">1</span></span><span title="6 silver badges"><span class="badge2"></span><span class="badgecount">6</span></span><span title="16 bronze badges"><span class="badge3"></span><span class="badgecount">16</span></span></div></div>
+        <br class="cbt">
+        <div class="accept-rate cool" title="this user has accepted an answer for 9 of 15 eligible questions">60% accept rate</div>
+    </td>
+    </tr>
+    </tbody></table>
+</div>
+</td>    </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-2201925" class="comments">
+        <table>
+        <tbody>
+                    
+    <tr id="comment-2152073" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span title="number of &#39;useful comment&#39; votes received" class="hot">16</span>
+</td>
+<td>
+<a class="comment-up comment-up-off" title="this comment adds something useful to the post">upvote</a>
+</td></tr>
+<tr><td>&nbsp;</td><td><a class="comment-flag" title="flag this comment as unconstructive, offensive, or spam">flag</a></td></tr></tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">Be ready to receive a lot of "Use JodaTime" answers...</span> –&nbsp;<a href="http://stackoverflow.com/users/166611/juanze" title="3579 reputation" class="comment-user">JuanZe</a> <span class="comment-date" dir="ltr"><a class="comment-link" onclick="StackExchange.question.highlightComment(2152073, 0)" href="http://stackoverflow.com/questions/2201925/converting-iso8601-compliant-string-to-java-util-date#comment2152073_2201925"><span title="2010-02-04 17:54:42Z">Feb 4 '10 at 17:54</span></a></span></div></td>
+    </tr>
+            
+    <tr id="comment-2152097" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span title="number of &#39;useful comment&#39; votes received" class="cool">1</span>
+</td>
+<td>
+<a class="comment-up comment-up-off" title="this comment adds something useful to the post">upvote</a>
+</td></tr>
+<tr><td>&nbsp;</td><td><a class="comment-flag" title="flag this comment as unconstructive, offensive, or spam">flag</a></td></tr></tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">Ha ha yea that too :-)</span> –&nbsp;<a href="http://stackoverflow.com/users/182668/pointy" title="93538 reputation" class="comment-user">Pointy</a> <span class="comment-date" dir="ltr"><a class="comment-link" onclick="StackExchange.question.highlightComment(2152097, 0)" href="http://stackoverflow.com/questions/2201925/converting-iso8601-compliant-string-to-java-util-date#comment2152097_2201925"><span title="2010-02-04 17:58:06Z">Feb 4 '10 at 17:58</span></a></span></div></td>
+    </tr>
+            
+    <tr id="comment-2152203" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span>&nbsp;</span>
+</td>
+<td>
+<a class="comment-up comment-up-off" title="this comment adds something useful to the post">upvote</a>
+</td></tr>
+<tr><td>&nbsp;</td><td><a class="comment-flag" title="flag this comment as unconstructive, offensive, or spam">flag</a></td></tr></tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">Oh, I love JodaTime - but didn't know it can help me here....</span> –&nbsp;<a href="http://stackoverflow.com/users/157229/ice09" title="812 reputation" class="comment-user owner">Ice09</a> <span class="comment-date" dir="ltr"><a class="comment-link" onclick="StackExchange.question.highlightComment(2152203, 0)" href="http://stackoverflow.com/questions/2201925/converting-iso8601-compliant-string-to-java-util-date#comment2152203_2201925"><span title="2010-02-04 18:10:27Z">Feb 4 '10 at 18:10</span></a></span></div></td>
+    </tr>
+            
+    <tr id="comment-2152446" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span>&nbsp;</span>
+</td>
+<td>
+<a class="comment-up comment-up-off" title="this comment adds something useful to the post">upvote</a>
+</td></tr>
+<tr><td>&nbsp;</td><td><a class="comment-flag" title="flag this comment as unconstructive, offensive, or spam">flag</a></td></tr></tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">Have you tried different locales? I wonder if there could be a bug that is locale specific with regards to how it parses time zones.</span> –&nbsp;<a href="http://stackoverflow.com/users/8753/laz" title="6682 reputation" class="comment-user">laz</a> <span class="comment-date" dir="ltr"><a class="comment-link" onclick="StackExchange.question.highlightComment(2152446, 0)" href="http://stackoverflow.com/questions/2201925/converting-iso8601-compliant-string-to-java-util-date#comment2152446_2201925"><span title="2010-02-04 18:36:23Z">Feb 4 '10 at 18:36</span></a></span></div></td>
+    </tr>
+            
+    <tr id="comment-2154525" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span title="number of &#39;useful comment&#39; votes received" class="cool">1</span>
+</td>
+<td>
+<a class="comment-up comment-up-off" title="this comment adds something useful to the post">upvote</a>
+</td></tr>
+<tr><td>&nbsp;</td><td><a class="comment-flag" title="flag this comment as unconstructive, offensive, or spam">flag</a></td></tr></tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">@Ice09: If the API documentation for DateTimeFormat is correct (the JoDa documentation can be misleading, wrong or incomplete though), the pattern you've used in your own "answer" is not compatible with ISO8601.</span> –&nbsp;<a href="http://stackoverflow.com/users/180659/jarnbjo" title="10635 reputation" class="comment-user">jarnbjo</a> <span class="comment-date" dir="ltr"><a class="comment-link" onclick="StackExchange.question.highlightComment(2154525, 0)" href="http://stackoverflow.com/questions/2201925/converting-iso8601-compliant-string-to-java-util-date#comment2154525_2201925"><span title="2010-02-04 22:47:37Z">Feb 4 '10 at 22:47</span></a></span></div></td>
+    </tr>
+
+        </tbody>
+    
+        </table>
+    </div>
+    <a id="comments-link-2201925" class="comments-link" data-comments-count="3" title="expand to show all comments on this post">show <b>3</b> more comments</a>
+    
+</td>
+</tr>    </tbody></table>    
+</div>
+
+
+
+<div id="answers">
+
+    <a name="tab-top"></a>
+    <div id="answers-header">
+        <div class="subheader answers-subheader">
+            <h2>3 Answers</h2>
+            <div id="tabs">
+                <a href="http://stackoverflow.com/questions/2201925/converting-iso8601-compliant-string-to-java-util-date?answertab=active#tab-top" title="Answers with the latest activity first">active</a>
+<a href="http://stackoverflow.com/questions/2201925/converting-iso8601-compliant-string-to-java-util-date?answertab=oldest#tab-top" title="Answers in the order they were provided">oldest</a>
+<a class="youarehere" href="http://stackoverflow.com/questions/2201925/converting-iso8601-compliant-string-to-java-util-date?answertab=votes#tab-top" title="Answers with the highest score first">votes</a>
+
+            </div>
+        </div>    
+    </div>    
+
+
+  
+    <a name="2202300"></a>
+    <div id="answer-2202300" class="answer" data-answerid="2202300">
+        <table>
+        <tbody><tr>
+        <td class="votecell">
+            
+
+<div class="vote">
+    <input type="hidden" value="2202300">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post">69</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+<span class="vote-accepted-on" title="The question owner accepted this as the best answer Feb 5 &#39;10 at 10:23">accepted</span> 
+</div>
+
+        </td>
+
+
+<td class="answercell">
+    <div class="post-text"><p>Unfortunately, the time zone formats available to SimpleDateFormat are not ISO8601 compliant. SimpleDateFormat understands time zone strings like "GMT+01:00" or "+0100", the latter according to RFC822.</p>
+
+<p>Reformatting your input string using regexp is certainly one possibility, but the replacement rules are not as simple as in your question:</p>
+
+<ul>
+<li>Some time zones are not full hours off UTC, so the string does not necessarily end with ":00".</li>
+<li>ISO8601 allows only the number of hours to be included in the time zone, so "+01" is equivalent to "+01:00"</li>
+<li>ISO8601 allows the usage of "Z" to indicate UTC instead of "+00:00".</li>
+</ul>
+
+<p>The easier solution is possibly to use the data type converter in JAXB, since JAXB must be able to parse ISO8601 date string according to the XML Schema specification. <code>javax.xml.bind.DatatypeConverter.parseDateTime("2010-01-01T12:00:00Z")</code> will give you a <code>Calendar</code> object and you can simply use getTime() on it, if you need a <code>Date</code> object.</p>
+
+<p>You could probably use JoDa as well, but I don't know why you should bother with that.</p>
+</div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/2202300/1314283" title="short permalink to this answer" class="short-link" id="link-post-2202300">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/2202300/edit" title="revise and improve this post">edit</a><span class="lsep">|</span><a id="flag-post-2202300" href="http://stackoverflow.com/questions/2201925/converting-iso8601-compliant-string-to-java-util-date#" title="flag this post for serious problems or moderator attention">flag</a></div>    </td>
+            
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info"><div class="user-action-time">answered <span title="2010-02-04 18:51:52Z" class="relativetime">Feb 4 '10 at 18:51</span></div><div class="user-gravatar32"><a href="http://stackoverflow.com/users/180659/jarnbjo"><div class=""><img src="./Converting ISO8601-compliant String to java.util.Date - Stack Overflow_files/b6d7101c81f4f799f3154d91b977848c" alt="" width="32" height="32"></div></a></div><div class="user-details"><a href="http://stackoverflow.com/users/180659/jarnbjo">jarnbjo</a><br><span class="reputation-score" title="reputation score 10635" dir="ltr">10.6k</span><span title="13 silver badges"><span class="badge2"></span><span class="badgecount">13</span></span><span title="27 bronze badges"><span class="badge3"></span><span class="badgecount">27</span></span></div></div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>        </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-2202300" class="comments">
+        <table>
+        <tbody>
+                    
+    <tr id="comment-2157413" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span title="number of &#39;useful comment&#39; votes received" class="cool">1</span>
+</td>
+<td>
+<a class="comment-up comment-up-off" title="this comment adds something useful to the post">upvote</a>
+</td></tr>
+<tr><td>&nbsp;</td><td><a class="comment-flag" title="flag this comment as unconstructive, offensive, or spam">flag</a></td></tr></tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">The JAXB-solution is a really creative approach! It works as well, I have tested it with my sample. However, for whoever faces the problem and is allowed to use JodaTime, I would advise to use it, since it feels more natural. But your solution requires not additional libraries (at least with Java 6).</span> –&nbsp;<a href="http://stackoverflow.com/users/157229/ice09" title="812 reputation" class="comment-user owner">Ice09</a> <span class="comment-date" dir="ltr"><a class="comment-link" onclick="StackExchange.question.highlightComment(2157413, 2202300)" href="http://stackoverflow.com/questions/2201925/converting-iso8601-compliant-string-to-java-util-date#comment2157413_2202300"><span title="2010-02-05 10:22:51Z">Feb 5 '10 at 10:22</span></a></span></div></td>
+    </tr>
+            
+    <tr id="comment-4188868" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span title="number of &#39;useful comment&#39; votes received" class="cool">4</span>
+</td>
+<td>
+<a class="comment-up comment-up-off" title="this comment adds something useful to the post">upvote</a>
+</td></tr>
+<tr><td>&nbsp;</td><td><a class="comment-flag" title="flag this comment as unconstructive, offensive, or spam">flag</a></td></tr></tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">Here's the reverse: Calendar c = GregorianCalendar.getInstance();c.setTime(aDate);return javax.xml.bind.DatatypeConverter.printDateTime(c);</span> –&nbsp;<a href="http://stackoverflow.com/users/76900/alexander-ljungberg" title="2462 reputation" class="comment-user">Alexander Ljungberg</a> <span class="comment-date" dir="ltr"><a class="comment-link" onclick="StackExchange.question.highlightComment(4188868, 2202300)" href="http://stackoverflow.com/questions/2201925/converting-iso8601-compliant-string-to-java-util-date#comment4188868_2202300"><span title="2010-10-13 18:13:25Z">Oct 13 '10 at 18:13</span></a></span></div></td>
+    </tr>
+            
+    <tr id="comment-4704033" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span>&nbsp;</span>
+</td>
+<td>
+<a class="comment-up comment-up-off" title="this comment adds something useful to the post">upvote</a>
+</td></tr>
+<tr><td>&nbsp;</td><td><a class="comment-flag" title="flag this comment as unconstructive, offensive, or spam">flag</a></td></tr></tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">Wow, that's a really non-obvious place to put such a useful thing.  Been searching for a few days.</span> –&nbsp;<a href="http://stackoverflow.com/users/244235/gtrak" title="1342 reputation" class="comment-user">gtrak</a> <span class="comment-date" dir="ltr"><a class="comment-link" onclick="StackExchange.question.highlightComment(4704033, 2202300)" href="http://stackoverflow.com/questions/2201925/converting-iso8601-compliant-string-to-java-util-date#comment4704033_2202300"><span title="2010-12-01 20:29:11Z">Dec 1 '10 at 20:29</span></a></span></div></td>
+    </tr>
+            
+    <tr id="comment-4704547" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span title="number of &#39;useful comment&#39; votes received" class="cool">3</span>
+</td>
+<td>
+<a class="comment-up comment-up-off" title="this comment adds something useful to the post">upvote</a>
+</td></tr>
+<tr><td>&nbsp;</td><td><a class="comment-flag" title="flag this comment as unconstructive, offensive, or spam">flag</a></td></tr></tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">Actually it's not so simple b/c you have to initialize the jaxb datatypeConverter.  I ended up using DatatypeFactory myself as DataTypeConverterImpl did internally.  What a headache.</span> –&nbsp;<a href="http://stackoverflow.com/users/244235/gtrak" title="1342 reputation" class="comment-user">gtrak</a> <span class="comment-date" dir="ltr"><a class="comment-link" onclick="StackExchange.question.highlightComment(4704547, 2202300)" href="http://stackoverflow.com/questions/2201925/converting-iso8601-compliant-string-to-java-util-date#comment4704547_2202300"><span title="2010-12-01 21:04:01Z">Dec 1 '10 at 21:04</span></a></span></div></td>
+    </tr>
+            
+    <tr id="comment-8362567" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span>&nbsp;</span>
+</td>
+<td>
+<a class="comment-up comment-up-off" title="this comment adds something useful to the post">upvote</a>
+</td></tr>
+<tr><td>&nbsp;</td><td><a class="comment-flag" title="flag this comment as unconstructive, offensive, or spam">flag</a></td></tr></tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">Love this one, nice work :D</span> –&nbsp;<a href="http://stackoverflow.com/users/717341/lukas-knuth" title="7838 reputation" class="comment-user">Lukas Knuth</a> <span class="comment-date" dir="ltr"><a class="comment-link" onclick="StackExchange.question.highlightComment(8362567, 2202300)" href="http://stackoverflow.com/questions/2201925/converting-iso8601-compliant-string-to-java-util-date#comment8362567_2202300"><span title="2011-08-09 23:40:58Z">Aug 9 '11 at 23:40</span></a></span></div></td>
+    </tr>
+
+        </tbody>
+    
+        </table>
+    </div>
+    <a id="comments-link-2202300" class="comments-link" data-comments-count="7" title="expand to show all comments on this post">show <b>7</b> more comments</a>
+    
+</td>
+</tr>    </tbody></table>
+</div>
+
+    <div class="everyonelovesstackoverflow" id="adzerk3"><a href="http://engine.adzerk.net/redirect/0/5921/2444/8277/9dfbc318eed441adbb43880dc2345eef/44/1178/8807/634800545368494770/?keywords=java%2cdate%2ciso8601%2cx-user-registered" rel="nofollow" target="_blank" title=""><img src="./Converting ISO8601-compliant String to java.util.Date - Stack Overflow_files/9241eb4107b24c588c0ca0042534c03e.png" title="" alt="" border="0" height="90" width="728"></a><img width="0" height="0" src="./Converting ISO8601-compliant String to java.util.Date - Stack Overflow_files/v.gif"></div>
+
+    
+  
+    <a name="10621553"></a>
+    <div id="answer-10621553" class="answer" data-answerid="10621553">
+        <table>
+        <tbody><tr>
+        <td class="votecell">
+            
+
+<div class="vote">
+    <input type="hidden" value="10621553">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post">9</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+ 
+</div>
+
+        </td>
+
+
+<td class="answercell">
+    <div class="post-text"><p>Okay, this question is already answered, but I'll drop my answer anyway. It might help someone.</p>
+
+<p>I've been looking for a <strong>solution for Android</strong> (API 7).</p>
+
+<ul>
+<li>Joda was out of the question - it is huge and suffers from slow initialization. It also seemed a major overkill for that particular purpose.</li>
+<li>Answers involving <code>javax.xml</code> won't work on Android API 7.</li>
+</ul>
+
+<p>Ended up implementing this simple class. It covers <strong>only the most common form</strong> of ISO 8601 strings, but this should be enough in some cases (when you're quite sure that the input will be in <em>this</em> format).</p>
+
+<pre class="lang-java prettyprint"><code><span class="com">/**<br>&nbsp;* Helper class for handling ISO 8601 strings of the following format:<br>&nbsp;* "2008-03-01T13:00:00+01:00". It also supports parsing the "Z" timezone.<br>&nbsp;*/</span><span class="pln"><br></span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">final</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> ISO8601 </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="com">/** Transform Calendar to ISO 8601 string. */</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">static</span><span class="pln"> </span><span class="typ">String</span><span class="pln"> fromCalendar</span><span class="pun">(</span><span class="kwd">final</span><span class="pln"> </span><span class="typ">Calendar</span><span class="pln"> calendar</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="typ">Date</span><span class="pln"> date </span><span class="pun">=</span><span class="pln"> calendar</span><span class="pun">.</span><span class="pln">getTime</span><span class="pun">();</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="typ">String</span><span class="pln"> formatted </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">SimpleDateFormat</span><span class="pun">(</span><span class="str">"yyyy-MM-dd'T'HH:mm:ssZ"</span><span class="pun">)</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="pun">.</span><span class="pln">format</span><span class="pun">(</span><span class="pln">date</span><span class="pun">);</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="kwd">return</span><span class="pln"> formatted</span><span class="pun">.</span><span class="pln">substring</span><span class="pun">(</span><span class="lit">0</span><span class="pun">,</span><span class="pln"> </span><span class="lit">22</span><span class="pun">)</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> </span><span class="str">":"</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> formatted</span><span class="pun">.</span><span class="pln">substring</span><span class="pun">(</span><span class="lit">22</span><span class="pun">);</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="pun">}</span><span class="pln"><br><br>&nbsp; &nbsp; </span><span class="com">/** Get current date and time formatted as ISO 8601 string. */</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">static</span><span class="pln"> </span><span class="typ">String</span><span class="pln"> now</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="kwd">return</span><span class="pln"> fromCalendar</span><span class="pun">(</span><span class="typ">GregorianCalendar</span><span class="pun">.</span><span class="pln">getInstance</span><span class="pun">());</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="pun">}</span><span class="pln"><br><br>&nbsp; &nbsp; </span><span class="com">/** Transform ISO 8601 string to Calendar. */</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">static</span><span class="pln"> </span><span class="typ">Calendar</span><span class="pln"> toCalendar</span><span class="pun">(</span><span class="kwd">final</span><span class="pln"> </span><span class="typ">String</span><span class="pln"> iso8601string</span><span class="pun">)</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="kwd">throws</span><span class="pln"> </span><span class="typ">ParseException</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="typ">Calendar</span><span class="pln"> calendar </span><span class="pun">=</span><span class="pln"> </span><span class="typ">GregorianCalendar</span><span class="pun">.</span><span class="pln">getInstance</span><span class="pun">();</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="typ">String</span><span class="pln"> s </span><span class="pun">=</span><span class="pln"> iso8601string</span><span class="pun">.</span><span class="pln">replace</span><span class="pun">(</span><span class="str">"Z"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"+00:00"</span><span class="pun">);</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="kwd">try</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; s </span><span class="pun">=</span><span class="pln"> s</span><span class="pun">.</span><span class="pln">substring</span><span class="pun">(</span><span class="lit">0</span><span class="pun">,</span><span class="pln"> </span><span class="lit">22</span><span class="pun">)</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> s</span><span class="pun">.</span><span class="pln">substring</span><span class="pun">(</span><span class="lit">23</span><span class="pun">);</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="pun">}</span><span class="pln"> </span><span class="kwd">catch</span><span class="pln"> </span><span class="pun">(</span><span class="typ">IndexOutOfBoundsException</span><span class="pln"> e</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="kwd">throw</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">ParseException</span><span class="pun">(</span><span class="str">"Invalid length"</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0</span><span class="pun">);</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="pun">}</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="typ">Date</span><span class="pln"> date </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">SimpleDateFormat</span><span class="pun">(</span><span class="str">"yyyy-MM-dd'T'HH:mm:ssZ"</span><span class="pun">).</span><span class="pln">parse</span><span class="pun">(</span><span class="pln">s</span><span class="pun">);</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; calendar</span><span class="pun">.</span><span class="pln">setTime</span><span class="pun">(</span><span class="pln">date</span><span class="pun">);</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="kwd">return</span><span class="pln"> calendar</span><span class="pun">;</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="pun">}</span><span class="pln"><br></span><span class="pun">}</span><span class="pln"><br></span></code></pre>
+
+<p><strong>Performance note:</strong> I instantiate new SimpleDateFormat every time as means to avoid <a href="http://code.google.com/p/android/issues/detail?id=8258">a bug</a> in Android 2.1. If you're as astonished as I was, see <a href="http://stackoverflow.com/questions/10624752/simpledateformat-timezone-bug-on-android">this riddle</a>. For other Java engines, you may cache the instance in a private static field (using ThreadLocal, to be thread safe).</p>
+</div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/10621553/1314283" title="short permalink to this answer" class="short-link" id="link-post-10621553">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/10621553/edit" title="revise and improve this post">edit</a><span class="lsep">|</span><a id="flag-post-10621553" href="http://stackoverflow.com/questions/2201925/converting-iso8601-compliant-string-to-java-util-date#" title="flag this post for serious problems or moderator attention">flag</a></div>    </td>
+    <td align="right" class="post-signature">
+<div class="user-info"><div class="user-action-time">edited <a href="http://stackoverflow.com/posts/10621553/revisions" title="show all edits to this post"><span title="2012-05-17 22:54:13Z" class="relativetime">May 17 at 22:54</span></a></div><div class="user-gravatar32"></div><div class="user-details"><br></div></div>    </td>
+            
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info"><div class="user-action-time">answered <span title="2012-05-16 15:16:17Z" class="relativetime">May 16 at 15:16</span></div><div class="user-gravatar32"><a href="http://stackoverflow.com/users/1010931/wrygiel"><div class=""><img src="./Converting ISO8601-compliant String to java.util.Date - Stack Overflow_files/15aa5d63d4b2970d4d1b564c9565e2f7" alt="" width="32" height="32"></div></a></div><div class="user-details"><a href="http://stackoverflow.com/users/1010931/wrygiel">wrygiel</a><br><span class="reputation-score" title="reputation score" dir="ltr">398</span><span title="1 silver badge"><span class="badge2"></span><span class="badgecount">1</span></span><span title="8 bronze badges"><span class="badge3"></span><span class="badgecount">8</span></span></div></div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>        </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-10621553" class="comments">
+        <table>
+        <tbody>
+                    
+    <tr id="comment-15252037" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span title="number of &#39;useful comment&#39; votes received" class="cool">1</span>
+</td>
+<td>
+<a class="comment-up comment-up-off" title="this comment adds something useful to the post">upvote</a>
+</td></tr>
+<tr><td>&nbsp;</td><td><a class="comment-flag" title="flag this comment as unconstructive, offensive, or spam">flag</a></td></tr></tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">thanks for adding this here!</span> –&nbsp;<a href="http://stackoverflow.com/users/512155/jan-groth" title="3139 reputation" class="comment-user">jan groth</a> <span class="comment-date" dir="ltr"><a class="comment-link" onclick="StackExchange.question.highlightComment(15252037, 10621553)" href="http://stackoverflow.com/questions/2201925/converting-iso8601-compliant-string-to-java-util-date#comment15252037_10621553"><span title="2012-07-18 07:27:35Z">Jul 18 at 7:27</span></a></span></div></td>
+    </tr>
+            
+    <tr id="comment-15613614" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span>&nbsp;</span>
+</td>
+<td>
+<a class="comment-up comment-up-off" title="this comment adds something useful to the post">upvote</a>
+</td></tr>
+<tr><td>&nbsp;</td><td><a class="comment-flag" title="flag this comment as unconstructive, offensive, or spam">flag</a></td></tr></tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">Perhaps this should have been made into a question of its own, with its own answer?</span> –&nbsp;<a href="http://stackoverflow.com/users/503668/thorbear" title="331 reputation" class="comment-user">Thorbear</a> <span class="comment-date" dir="ltr"><a class="comment-link" onclick="StackExchange.question.highlightComment(15613614, 10621553)" href="http://stackoverflow.com/questions/2201925/converting-iso8601-compliant-string-to-java-util-date#comment15613614_10621553"><span title="2012-08-01 13:25:07Z">Aug 1 at 13:25</span></a></span></div></td>
+    </tr>
+            
+    <tr id="comment-15633486" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span>&nbsp;</span>
+</td>
+<td>
+<a class="comment-up comment-up-off" title="this comment adds something useful to the post">upvote</a>
+</td></tr>
+<tr><td>&nbsp;</td><td><a class="comment-flag" title="flag this comment as unconstructive, offensive, or spam">flag</a></td></tr></tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">This was the first page I've stubled upon when I was looking for the answer, so it seemed fit. For most Java developers, Android is not exactly Java. However, in most cases, one works the same as the other, so many Android developers will search for "java" when looking for this.</span> –&nbsp;<a href="http://stackoverflow.com/users/1010931/wrygiel" title="398 reputation" class="comment-user">wrygiel</a> <span class="comment-date" dir="ltr"><a class="comment-link" onclick="StackExchange.question.highlightComment(15633486, 10621553)" href="http://stackoverflow.com/questions/2201925/converting-iso8601-compliant-string-to-java-util-date#comment15633486_10621553"><span title="2012-08-02 06:24:35Z">Aug 2 at 6:24</span></a></span><span class="edited-yes" title="this comment was edited 2 times"></span></div></td>
+    </tr>
+
+        </tbody>
+    
+        </table>
+    </div>
+    
+    
+</td>
+</tr>    </tbody></table>
+</div>
+
+  
+    <a name="5653145"></a>
+    <div id="answer-5653145" class="answer" data-answerid="5653145">
+        <table>
+        <tbody><tr>
+        <td class="votecell">
+            
+
+<div class="vote">
+    <input type="hidden" value="5653145">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post">6</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+ 
+</div>
+
+        </td>
+
+
+<td class="answercell">
+    <div class="post-text"><p>The DatatypeConverter solution doesn't work in all VMs. The following works for me:</p>
+
+<pre class="lang-java prettyprint"><code><span class="pln">javax</span><span class="pun">.</span><span class="pln">xml</span><span class="pun">.</span><span class="pln">datatype</span><span class="pun">.</span><span class="typ">DatetypeFactory</span><span class="pun">.</span><span class="pln">newInstance</span><span class="pun">().</span><span class="pln">newXMLGregorianCalendar</span><span class="pun">(</span><span class="str">"2011-01-01Z"</span><span class="pun">).</span><span class="pln">toGregorianCalendar</span><span class="pun">().</span><span class="pln">getTime</span><span class="pun">()</span><span class="pln"><br></span></code></pre>
+
+<p>I've found that joda does not work out of the box (specifically for the example I gave above with the timezone on a date, which should be valid)</p>
+</div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/5653145/1314283" title="short permalink to this answer" class="short-link" id="link-post-5653145">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/5653145/edit" title="revise and improve this post">edit</a><span class="lsep">|</span><a id="flag-post-5653145" href="http://stackoverflow.com/questions/2201925/converting-iso8601-compliant-string-to-java-util-date#" title="flag this post for serious problems or moderator attention">flag</a></div>    </td>
+            
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover"><div class="user-action-time">answered <span title="2011-04-13 17:27:20Z" class="relativetime">Apr 13 '11 at 17:27</span></div><div class="user-gravatar32"><a href="http://stackoverflow.com/users/651794/james-scriven"><div class=""><img src="./Converting ISO8601-compliant String to java.util.Date - Stack Overflow_files/e4be18674fd6c017981b7937501bbcef" alt="" width="32" height="32"></div></a></div><div class="user-details"><a href="http://stackoverflow.com/users/651794/james-scriven">James Scriven</a><br><span class="reputation-score" title="reputation score" dir="ltr">1,221</span><span title="3 silver badges"><span class="badge2"></span><span class="badgecount">3</span></span><span title="10 bronze badges"><span class="badge3"></span><span class="badgecount">10</span></span></div></div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>        </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-5653145" class="comments dno">
+        <table>
+        <tbody>
+        
+            <tr><td></td><td></td></tr>
+        
+        </tbody>
+    
+        </table>
+    </div>
+    
+    
+</td>
+</tr>    </tbody></table>
+</div>
+    <a name="new-answer"></a>
+    <form id="post-form" action="http://stackoverflow.com/questions/2201925/answer/submit" method="post" class="post-form">
+        <h2 class="space">Your Answer</h2>
+
+
+
+
+
+
+<div id="post-editor" class="post-editor">  
+
+    
+    <div class="wmd-container">
+        <div id="wmd-button-bar" class="wmd-button-bar"><ul id="wmd-button-row" class="wmd-button-row"><li class="wmd-button" style="left: 0px; " id="wmd-bold-button" title="Strong &lt;strong&gt; Ctrl+B"><span style="background-position: 0px 0px; "></span></li><li class="wmd-button" style="left: 25px; " id="wmd-italic-button" title="Emphasis &lt;em&gt; Ctrl+I"><span style="background-position: -20px 0px; "></span></li><li class="wmd-spacer wmd-spacer1" id="wmd-spacer1"></li><li class="wmd-button" style="left: 75px; " id="wmd-link-button" title="Hyperlink &lt;a&gt; Ctrl+L"><span style="background-position: -40px 0px; "></span></li><li class="wmd-button" style="left: 100px; " id="wmd-quote-button" title="Blockquote &lt;blockquote&gt; Ctrl+Q"><span style="background-position: -60px 0px; "></span></li><li class="wmd-button" style="left: 125px; " id="wmd-code-button" title="Code Sample &lt;pre&gt;&lt;code&gt; Ctrl+K"><span style="background-position: -80px 0px; "></span></li><li class="wmd-button" style="left: 150px; " id="wmd-image-button" title="Image &lt;img&gt; Ctrl+G"><span style="background-position: -100px 0px; "></span></li><li class="wmd-spacer wmd-spacer2" id="wmd-spacer2"></li><li class="wmd-button" style="left: 200px; " id="wmd-olist-button" title="Numbered List &lt;ol&gt; Ctrl+O"><span style="background-position: -120px 0px; "></span></li><li class="wmd-button" style="left: 225px; " id="wmd-ulist-button" title="Bulleted List &lt;ul&gt; Ctrl+U"><span style="background-position: -140px 0px; "></span></li><li class="wmd-button" style="left: 250px; " id="wmd-heading-button" title="Heading &lt;h1&gt;/&lt;h2&gt; Ctrl+H"><span style="background-position: -160px 0px; "></span></li><li class="wmd-button" style="left: 275px; " id="wmd-hr-button" title="Horizontal Rule &lt;hr&gt; Ctrl+R"><span style="background-position: -180px 0px; "></span></li><li class="wmd-spacer wmd-spacer3" id="wmd-spacer3"></li><li class="wmd-button" style="left: 325px; " id="wmd-undo-button" title="Undo - Ctrl+Z"><span style="background-position: -200px -20px; "></span></li><li class="wmd-button" style="left: 350px; " id="wmd-redo-button" title="Redo - Ctrl+Shift+Z"><span style="background-position: -220px -20px; "></span></li><li class="wmd-button wmd-help-button active-help" id="wmd-help-button" style="right: 0px; " title="Markdown Editing Help"><span style="background-position: -240px 0px; "></span></li><div id="mdhelp" class="mdhelp" style="right: -7.981414794921875px; width: 667px; top: 25px; ">
+    <ul id="mdhelp-tabs" class="mdhelp-tabs">
+        <li data-tab="mdhelp-links" data-buttons="link">Links</li>
+        <li data-tab="mdhelp-images" data-buttons="image">Images</li>
+        <li data-tab="mdhelp-styles" data-buttons="bold,italic,heading">Styling/Headers</li>
+        <li data-tab="mdhelp-lists" data-buttons="olist,ulist">Lists</li>
+        <li data-tab="mdhelp-blockquotes" data-buttons="quote">Blockquotes</li>
+        <li data-tab="mdhelp-code" data-buttons="code">Code</li>
+        <li data-tab="mdhelp-html">HTML</li>
+        <li style="float:right"><a href="http://stackoverflow.com/editing-help" target="_blank">advanced help »</a></li>
+    </ul>
+    
+    <div class="mdhelp-tab" id="mdhelp-links">
+            <p>
+                In most cases, a plain URL will be recognized as such and automatically linked:
+            </p>
+            <pre>Visit http://area51.stackexchange.com/ regularly!
+Use angle brackets to force linking: Have you seen &lt;http://superuser.com&gt;?
+</pre>
+            <p>
+                To create fancier links, use Markdown:
+            </p>
+                <pre>Here's [a link](http://www.example.com/)! And a reference-style link to [a panda][1].
+References don't have to be [numbers][question].
+
+ [1]: http://notfound.stackexchange.com/
+ [question]: http://english.stackexchange.com/questions/11481
+</pre>
+                <p>You can add tooltips to links:</p>
+<pre>Click [here](http://diy.stackexchange.com<span class="spaces">&nbsp;</span>"this text appears when you mouse over")!
+This works with [reference links][blog] as well.
+
+ [blog]: http://blog.stackoverflow.com/<span class="spaces">&nbsp;</span>"click here for updates"
+</pre>
+    </div>
+
+    <div class="mdhelp-tab" id="mdhelp-images">
+        <p>Images are exactly like links, but they have an exclamation point in front of them:</p>
+        <pre>![a busy cat](http://sstatic.net/stackoverflow/img/error-lolcat-problemz.jpg)
+![two muppets][1]
+
+ [1]: http://i.imgur.com/I5DFV.jpg "tooltip"
+</pre>
+        <p>
+            The word in square brackets is the alt text, which gets displayed if the browser
+            can't show the image. Be sure to include meaningful alt text for screen-reading
+            software.
+        </p>
+   
+    </div>
+    <div class="mdhelp-tab" id="mdhelp-styles">
+        <div class="col1">
+            <p>Be sure to use text styling sparingly; only where it helps readability.</p>
+                <pre>*This is italicized*, and so
+is _this_.
+
+**This is bold**, just like __this__.
+
+You can ***combine*** them
+if you ___really have to___.
+</pre>
+        
+        </div>
+        <div class="col2">
+            <p>
+                To break your text into sections, you can use headers:
+            </p>
+                <pre>A Large Header
+==============
+
+Smaller Subheader
+-----------------
+</pre>
+            <p>
+                Use hash marks if you need several levels of headers:</p>
+    <pre># Header 1 #
+## Header 2 ##
+### Header 3 ###
+</pre>
+
+            
+        </div>
+
+    </div>
+    <div class="mdhelp-tab" id="mdhelp-lists">
+        <p>Both bulleted and numbered lists are possible:</p>
+        <div class="col1">
+<pre>-<span class="spaces">&nbsp;</span>Use a minus sign for a bullet
++<span class="spaces">&nbsp;</span>Or plus sign
+*<span class="spaces">&nbsp;</span>Or an asterisk
+
+1.<span class="spaces">&nbsp;</span>Numbered lists are easy
+2.<span class="spaces">&nbsp;</span>Markdown keeps track of
+   the numbers for you
+7.<span class="spaces">&nbsp;</span>So this will be item 3.
+</pre>
+        </div>
+        <div class="col2">
+<pre>1.<span class="spaces">&nbsp;</span>Lists in a list item:
+<span class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</span>-<span class="spaces">&nbsp;</span>Indented four spaces.
+<span class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>*<span class="spaces">&nbsp;</span>indented eight spaces.
+<span class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</span>-<span class="spaces">&nbsp;</span>Four spaces again.
+2.<span class="spaces">&nbsp;&nbsp;</span>You can have multiple
+<span class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</span>paragraphs in a list items.
+<span class="spaces">&nbsp;</span>
+<span class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</span>Just be sure to indent.
+</pre>        
+        </div>
+    </div>
+
+    <div class="mdhelp-tab" id="mdhelp-blockquotes">
+        <div class="col1">
+            <pre>&gt; Create a blockquote by
+&gt; prepending “&gt;” to each line.
+&gt;
+&gt; Other formatting also works here, e.g.
+&gt;
+&gt; 1. Lists or
+&gt; 2. Headings:
+&gt;
+&gt; ## Quoted Heading ##
+            </pre>
+        </div>
+        <div class="col2">
+                <p>
+                    You can even put blockquotes in blockquotes:
+                </p>
+                <pre>&gt; A standard blockquote is indented
+&gt; &gt; A nested blockquote is indented more
+&gt; &gt; &gt; &gt; You can nest to any depth.
+</pre>
+        </div>
+    </div>
+
+    <div class="mdhelp-tab" id="mdhelp-code">
+        <p>
+            To create code blocks or other preformatted text, indent by four spaces:
+        </p>
+        <pre><span class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</span>This will be displayed in a monospaced font. The first four spaces
+<span class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</span>will be stripped off, but all other whitespace will be preserved.
+<span class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</span>Markdown and HTML are turned off in code blocks:
+<span class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</span>&lt;i&gt;This is not italic&lt;/i&gt;, and [this is not a link](http://example.com)
+</pre>
+        <p>
+            To create not a block, but an inline code span, use backticks:
+        </p>
+        <pre>Press the `&lt;Tab&gt;` key, then type a `$`.
+</pre>
+        <p>
+            If you want to have a preformatted block within a list, indent by eight spaces:
+        </p>
+        <pre>1. This is normal text.
+2. So is this, but now follows a code block:
+<span class="spaces">&nbsp;</span>
+<span class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Skip a line and indent eight spaces.
+<span class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>That's four spaces for the list
+<span class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>and four to trigger the code block.
+</pre>
+    </div>
+
+    <div class="mdhelp-tab" id="mdhelp-html">
+        <p>
+            If you need to do something that Markdown can't handle, use HTML. Note that
+            <a href="http://meta.stackoverflow.com/questions/1777/what-html-tags-are-allowed" target="_blank">we only support a very strict subset of HTML!</a>
+        </p>
+        <pre>Strikethrough humor is &lt;strike&gt;funny&lt;/strike&gt;.
+</pre>
+        <p>
+            Markdown is smart enough not to mangle your span-level HTML:
+        </p>
+        <pre>&lt;b&gt;Markdown works *fine* in here.&lt;/b&gt;
+</pre>
+        <p>
+            Block-level HTML elements have a few restrictions:
+        </p>
+        <ol>
+            <li>They must be separated from surrounding text by blank lines.</li>
+            <li>The begin and end tags of the outermost block element must not be indented.</li>
+            <li>Markdown can't be used within HTML blocks.</li>
+        </ol>
+        <br>
+        <pre>&lt;pre&gt;
+    You can &lt;em&gt;not&lt;/em&gt; use Markdown in here.
+&lt;/pre&gt;
+</pre>
+    </div>
+
+    <div class="cbt"></div>
+</div></ul></div>
+        <div style="clear: both; height: 23.407470703125px; "></div><textarea id="wmd-input" class="wmd-input processed" name="post-text" cols="92" rows="15" tabindex="101"></textarea>
+    <div class="grippie" style="margin-right: 0px; "></div></div>
+
+    <div class="fl" style="margin-top: 8px; height:24px;">&nbsp;</div>
+    <div id="draft-saved" class="draft-saved community-option fl" style="margin-top: 8px; height:24px; display:none;">draft saved</div>
+
+    <div id="draft-discarded" class="draft-discarded community-option fl" style="margin-top: 8px; height:24px; display:none;">draft discarded</div>
+
+    <div class="community-option">
+        <input id="communitymode" name="communitymode" type="checkbox">
+        <label for="communitymode" title="Marking an answer community wiki encourages others to edit it by lowering the reputation barrier required to edit. However, you will not gain any upvote reputation from it. This cannot be undone.">community wiki</label>
+    </div>
+
+
+    <div id="wmd-preview" class="wmd-preview"></div>
+    <div></div>
+    <div class="edit-block">
+        <input id="fkey" name="fkey" type="hidden" value="353b7459bdbc817ee3ff9a622cdeba88">
+        <input id="author" name="author" type="text">
+    </div>
+</div>           
+        <div class="form-submit cbt">
+            <input id="submit-button" type="submit" value="Post Your Answer" tabindex="110">
+            <a href="http://stackoverflow.com/questions/2201925/converting-iso8601-compliant-string-to-java-util-date#" class="discard-answer dno">discard</a>
+        </div>
+    </form>
+
+
+
+
+        <h2 class="bottom-notice">
+                Not the answer you're looking for? 
+            Browse other questions tagged <a href="http://stackoverflow.com/questions/tagged/java" class="post-tag" title="show questions tagged &#39;java&#39;" rel="tag">java</a> <a href="http://stackoverflow.com/questions/tagged/date" class="post-tag" title="show questions tagged &#39;date&#39;" rel="tag">date</a> <a href="http://stackoverflow.com/questions/tagged/iso8601" class="post-tag" title="show questions tagged &#39;iso8601&#39;" rel="tag">iso8601</a> 
+                or <a href="http://stackoverflow.com/questions/ask">ask your own question</a>.
+        </h2>
+</div>
+</div>
+<div id="sidebar">
+    <div class="module question-stats">
+        <p class="label-key">tagged</p>
+        <div class="tagged"><a href="http://stackoverflow.com/questions/tagged/java" class="post-tag" title="show questions tagged &#39;java&#39;" rel="tag">java</a>&nbsp;<span class="item-multiplier"><span class="item-multiplier-x">×</span>&nbsp;<span class="item-multiplier-count">281059</span></span><br>
+<a href="http://stackoverflow.com/questions/tagged/date" class="post-tag" title="show questions tagged &#39;date&#39;" rel="tag">date</a>&nbsp;<span class="item-multiplier"><span class="item-multiplier-x">×</span>&nbsp;<span class="item-multiplier-count">8894</span></span><br>
+<a href="http://stackoverflow.com/questions/tagged/iso8601" class="post-tag" title="show questions tagged &#39;iso8601&#39;" rel="tag">iso8601</a>&nbsp;<span class="item-multiplier"><span class="item-multiplier-x">×</span>&nbsp;<span class="item-multiplier-count">82</span></span><br>
+</div>
+        <table id="qinfo">
+            <tbody><tr>
+                <td><p class="label-key">asked</p></td>
+                <td style="padding-left:10px"><p class="label-key" title="2010-02-04 17:52:39Z"><b>2 years ago</b></p></td>
+            </tr>
+            <tr>
+                <td><p class="label-key">viewed</p></td>
+
+                <td style="padding-left:10px"><p class="label-key"><b>27,280 times</b></p></td>
+            </tr>
+            <tr>
+                <td><p class="label-key">active</p></td>
+                <td style="padding-left:10px"><p class="label-key"><b><a href="http://stackoverflow.com/questions/2201925/converting-iso8601-compliant-string-to-java-util-date?lastactivity" class="lastactivity-link" title="2012-05-17 22:54:13Z">2 months ago</a></b></p></td>
+            </tr>
+        </tbody></table>
+    </div>
+
+<div class="module community-bulletin" data-tracker="cb=1">
+    <h4>Community Bulletin</h4>
+    <div class="related">
+        <div class="spacer">
+            <div class="bulletin-item-type"><a href="http://blog.stackoverflow.com/?cb=1" class="event-date" target="_blank">blog</a></div>
+            <div class="bulletin-item-content">
+                <a href="http://blog.stackoverflow.com/2012/08/stack-exchange-is-not-a-forum-the-role-of-niceness-on-a-qa-site/?cb=1" class="question-hyperlink" target="_blank">Stack Exchange is not a forum: the role of “niceness” on a Q&amp;A site</a>
+            </div>
+            <br class="cbt">
+        </div>
+    </div>
+</div>
+    
+        <script type="text/javascript">
+            var scriptSrc = "http://engine2.adzerk.net/z/8277/adzerk1_2_4_43,adzerk2_2_17_45,adzerk3_2_4_44?keywords=java,date,iso8601,x-user-registered";
+            if (document.referrer) {
+                if (/\?/.test(scriptSrc))
+                    scriptSrc += "&";
+                else
+                    scriptSrc += "?";
+                scriptSrc += "xReferrer=" + document.referrer;
+            }
+            StackExchange.ready(function(){var z = document.createElement("script"); z.type = "text/javascript"; z.async = "true"; z.src = scriptSrc; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);});
+        </script>
+    
+    <div class="everyonelovesstackoverflow" id="adzerk2"><div id="SE20-ad-container" style="height: 250px; width: 220px;">
+<style>
+#launched-ad { width: 220px; height: 250px; overflow: hidden; background: url(http://cdn.sstatic.net/stackexchange/Img/launched-ads/serverfault.png) no-repeat bottom center; }
+#launched-ad-link { display: block; width: 220px; height: 250px; line-height: 1.2; color: #10456a !important; font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; font-size: 20px; line-height: 24px; text-decoration: none; cursor: pointer; }
+#launched-ad-inner { width: 180px; margin: 35px 20px 0 20px;}
+</style>
+<a id="launched-ad-link" href="http://engine.adzerk.net/redirect/0/3194/2841/8277/3b7b3122c73d4de4b9d67f0c0072c26c/45/1178/11719/634800545368407650/?keywords=java%2cdate%2ciso8601%2cx-user-registered&url=http%3A%2F%2Fserverfault.com%2Fquestions%2F415670%2Fpros-and-cons-of-installing-esxi-on-a-ssd-vs-usb-flash-drive">
+    <div id="launched-ad">
+        <div id="launched-ad-inner">Pros and cons of installing ESXi on a SSD vs USB flash drive?</div>
+    </div>
+</a>
+</div><img width="0" height="0" src="./Converting ISO8601-compliant String to java.util.Date - Stack Overflow_files/v(1).gif"><script type="text/javascript">window._launchedAdUrl= "http://engine.adzerk.net/redirect/0/3194/2841/8277/3b7b3122c73d4de4b9d67f0c0072c26c/45/1178/11719/634800545368407650/?keywords=java%2cdate%2ciso8601%2cx-user-registered";</script><script type="text/javascript" src="./Converting ISO8601-compliant String to java.util.Date - Stack Overflow_files/js"></script></div>
+
+    
+    <div id="hireme"> <a href="http://careers.stackoverflow.com/jobs?a=12" class="top" target="_blank"></a> <ul class="jobs"> <li> <a href="http://careers.stackoverflow.com/jobs/22723/senior-web-developer-php-lamp-javascript-v-com?a=qQwVEPe" target="_blank" title="Senior Web Developer (PHP/LAMP/JavaScript) - Boulder/Denver at V-COM. Click to learn more."> Senior Web Developer (PHP/LAMP/JavaScript) - Boulder/Denver<br> <span class="company">V-COM</span> <span class="location">Denver, CO; Boulder, CO</span> </a> </li> <li> <a href="http://careers.stackoverflow.com/jobs/22829/qa-engineer-datalogix?a=qYillqE" target="_blank" title="QA Engineer at Datalogix. Click to learn more."> QA Engineer<br> <span class="company">Datalogix</span> <span class="location">Westminster, CO</span> </a> </li> <li> <a href="http://careers.stackoverflow.com/jobs/22701/web-and-mobile-software-engineer-hidef?a=qOV0R2w" target="_blank" title="Web and Mobile Software Engineer at HiDef. Click to learn more."> Web and Mobile Software Engineer<br> <span class="company">HiDef</span> <span class="location">Denver, CO; Albuquerque, NM</span> </a> </li> <li class="city"><a href="http://careers.stackoverflow.com/jobs/location/littleton,%20co,%20united%20states?a=vYY">More jobs near Littleton...</a></li> </ul> <img alt="" class="impression" src="./Converting ISO8601-compliant String to java.util.Date - Stack Overflow_files/qQwVEPe-qYillqE-qOV0R2w-12-vYY" style="display:none"></div>
+
+      
+    
+    <div class="module sidebar-linked">
+        <h4 id="h-linked">Linked</h4>
+        <div class="linked" data-tracker="lq=1">
+            <div class="spacer">
+<a href="http://stackoverflow.com/questions/2580925/simpledateformat-parsing-date-with-z-literal?lq=1" class="question-hyperlink">simpledateformat parsing date with 'Z' literal</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/1554852/parsing-a-date-string-using-java-text-simpledateformat?lq=1" class="question-hyperlink">Parsing a date string using java.text.SimpleDateFormat</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/4013681/parse-this-type-of-date-format-in-java?lq=1" class="question-hyperlink">parse this type of date format in java?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/6279647/converting-a-string-to-date-almost-done?lq=1" class="question-hyperlink">Converting a String to Date, almost done!</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/4542679/java-time-zone-when-parsing-dateformat?lq=1" class="question-hyperlink">Java Time Zone When Parsing DateFormat</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/4900028/java-date-format?lq=1" class="question-hyperlink">java Date format</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/5397169/java-timestamp-string-parsing?lq=1" class="question-hyperlink">Java Timestamp string parsing</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/10624752/simpledateformat-timezone-bug-on-android?lq=1" class="question-hyperlink">SimpleDateFormat timezone bug on Android</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/8292105/java-simple-date-format-conversion?lq=1" class="question-hyperlink">Java Simple Date format Conversion</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/10225569/java-convert-facebook-created-time-to-utc?lq=1" class="question-hyperlink">Java Convert Facebook created_time to UTC</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/4455917/how-parse-this-2009-05-12t134000z-to-java-date?lq=1" class="question-hyperlink">How parse this 2009-05-12T13:40:00Z to java date</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/5698741/parse-gmt-string-to-local?lq=1" class="question-hyperlink">Parse GMT string to local</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/6993984/convert-utc-time-t0-local-time-in-java-and-c-sharp?lq=1" class="question-hyperlink">Convert UTC Time T0 Local Time In Java and c#</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/8986913/converting-string-to-date-in-java-complex-string?lq=1" class="question-hyperlink">converting String to date in java (complex string )</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/10281177/error-while-converting-mongodb-date-to-java-date?lq=1" class="question-hyperlink">Error while converting Mongodb Date to Java Date</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/9490646/confusion-about-parsing-dates-with-odd-characters?lq=1" class="question-hyperlink">Confusion about parsing dates with odd characters</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/10572855/convert-java-string-in-iso-timestamp-format-to-simpledateformat?lq=1" class="question-hyperlink">Convert Java String in ISO timestamp format to SimpleDateFormat</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/9515291/java-java-text-parseexception-unparseable-date?lq=1" class="question-hyperlink">java : java.text.ParseException: Unparseable date</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/9157476/how-to-convert-2012-01-01t0844360100-to-datetimeyyyy-mm-dd-hhmmss-in-jav?lq=1" class="question-hyperlink">How to convert 2012-01-01T08:44:36+01:00 to datetime(yyyy-MM-dd hh:mm:ss) in Java?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/10762428/how-to-create-a-generic-date-formatter-in-java-for-solr?lq=1" class="question-hyperlink">How to create a generic date formatter in java for Solr?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/7604237/jersey-has-written-my-mysql-timestamp-as-2011-09-28t214825z-how-do-i-format-it?lq=1" class="question-hyperlink">Jersey has written my mysql timestamp as 2011-09-28T21:48:25Z how do I format it in Java?</a>
+</div>
+<div class="spacer more">
+<a href="http://stackoverflow.com/search?q=url%3a%22http%3a%2f%2fstackoverflow.com%2fquestions%2f2201925%2f*%22&lq=1">see more linked questions…</a></div>
+
+        </div>
+    </div>
+    <div class="module sidebar-related">
+        <h4 id="h-related">Related</h4>
+        <div class="related" data-tracker="rq=1">
+            <div class="spacer">
+<a href="http://stackoverflow.com/questions/121408/storing-a-calendar-day-in-sqlite-database?rq=1" class="question-hyperlink">Storing a calendar day in sqlite database</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/1554852/parsing-a-date-string-using-java-text-simpledateformat?rq=1" class="question-hyperlink">Parsing a date string using java.text.SimpleDateFormat</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/1573612/javascript-date-to-is8601-format?rq=1" class="question-hyperlink">Javascript Date to IS8601 format?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/1713073/convert-querstring-parameter-to-javascript-date-object-fails-nan?rq=1" class="question-hyperlink">Convert querstring parameter to javascript date object fails - NaN</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/2201216/is-there-a-simple-way-of-converting-an-iso8601-timestamp-to-a-formatted-nsdate?rq=1" class="question-hyperlink">Is there a simple way of converting an ISO8601 timestamp to a formatted NSDate?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/2375222/java-simpledateformat-for-time-zone-with-a-colon-seperator?rq=1" class="question-hyperlink">Java SimpleDateFormat for time zone with a colon seperator?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/2735023/convert-string-to-java-util-date?rq=1" class="question-hyperlink">Convert String to java.util.Date</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/2823442/rfc822-timezone-parsing-in-java?rq=1" class="question-hyperlink">RFC822 Timezone Parsing in Java</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/3721085/parse-and-create-iso-8601-date-and-time-intervals-like-pt15m-in-php?rq=1" class="question-hyperlink">Parse and create ISO 8601 Date and time intervals, like PT15M in PHP</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/4129906/problem-converting-calendar-to-java-util-date?rq=1" class="question-hyperlink">problem converting calendar to java.util.Date</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/5581488/converting-string-to-a-formatted-date?rq=1" class="question-hyperlink">Converting string to a formatted date</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/6279647/converting-a-string-to-date-almost-done?rq=1" class="question-hyperlink">Converting a String to Date, almost done!</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/6651829/how-do-i-convert-an-iso-8601-string-to-a-delphi-tdate?rq=1" class="question-hyperlink">How do I convert an ISO 8601 string to a Delphi TDate?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/7367953/php-format-date-iso8601?rq=1" class="question-hyperlink">php - format date ISO8601?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/8151067/converting-a-string-to-java-util-date?rq=1" class="question-hyperlink">converting a String to java.util.Date</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/8354724/fullcalendar-parsing-iso8601-date-does-not-work?rq=1" class="question-hyperlink">fullcalendar parsing ISO8601 Date does not work</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/8524570/date-formatting-and-parsing-issue?rq=1" class="question-hyperlink">Date formatting and parsing issue</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/8676672/how-to-parse-an-iso8601-date-in-ios?rq=1" class="question-hyperlink">How to parse an ISO8601 date in iOS?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/8888349/timestamp-arithmetic-in-bash?rq=1" class="question-hyperlink">Timestamp arithmetic in bash</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/9517305/java-return-a-string-in-the-java-util-date-format?rq=1" class="question-hyperlink">Java : Return a String in the java.util.Date Format</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/10301862/converting-time-to-iso-8601-format?rq=1" class="question-hyperlink">Converting time to ISO 8601 format</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/10572855/convert-java-string-in-iso-timestamp-format-to-simpledateformat?rq=1" class="question-hyperlink">Convert Java String in ISO timestamp format to SimpleDateFormat</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/10894212/convert-string-into-java-util-date-format-in-java?rq=1" class="question-hyperlink">convert string into java.util.date format in java</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/11224028/spring-3-0-exception-converting-string-to-java-util-date-on-post?rq=1" class="question-hyperlink">Spring 3.0 exception converting String to java.util.Date on POST</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/11408249/how-do-you-represent-forever-infinitely-in-the-future-in-iso8601?rq=1" class="question-hyperlink">How do you represent forever (infinitely in the future) in iso8601?</a>
+</div>
+
+        </div>
+    </div>
+</div>
+
+<div id="feed-link">
+    <div id="feed-link-text"><a href="http://stackoverflow.com/feeds/question/2201925" title="feed of this question and its answers"><span class="feed-icon"></span>question feed</a></div>
+</div>
+
+<noscript>
+    &lt;div&gt;&lt;img src="/posts/2201925/ivc/0d75" class="dno" alt="" width="0" height="0"&gt;&lt;/div&gt;
+</noscript><div style="display:none" id="prettify-lang">lang-java</div></div>
+        </div>
+    </div>
+    <div id="footer">
+        <div class="footerwrap">
+            <div id="footer-menu">
+                <a href="http://stackoverflow.com/about">about</a> |
+                <a href="http://stackoverflow.com/faq">faq</a> |
+                <a href="http://blog.stackexchange.com/?blb=1">blog</a> |
+                    <a href="http://chat.stackoverflow.com/">chat</a> |
+                <a href="http://data.stackexchange.com/">data</a> |
+                <a href="http://stackexchange.com/legal">legal</a> |
+                <a href="http://stackexchange.com/legal/privacy-policy">privacy policy</a> |
+                <a href="http://engine.adzerk.net/redirect/0/2776/2751/0/4de3c60f719c4dfcb1a57531c7050090/0">advertising info</a> |
+                <a onclick="StackExchange.switchMobile(&#39;on&#39;, &#39;/questions/2201925/converting-iso8601-compliant-string-to-java-util-date&#39;)">mobile</a> |
+
+                <b><a href="http://stackoverflow.com/help">contact us</a></b>
+                  | <b><a href="http://meta.stackoverflow.com/">feedback</a></b>
+                <div id="footer-sites">
+                    
+                        <span style="color:#FE7A15;font-size:140%">■</span>&nbsp;<a href="http://stackoverflow.com/">stackoverflow.com</a>&nbsp; 
+                        <span style="color:#FE7A15;font-size:140%">■</span>&nbsp;<a href="http://stackapps.com/">api/apps</a>&nbsp; 
+                        <span style="color:#FE7A15;font-size:140%">■</span>&nbsp;<a href="http://careers.stackoverflow.com/">careers</a>&nbsp; 
+                        <span style="color:#E8272C;font-size:140%">■</span>&nbsp;<a href="http://serverfault.com/">serverfault.com</a>&nbsp; 
+                        <span style="color:#00AFEF;font-size:140%">■</span>&nbsp;<a href="http://superuser.com/">superuser.com</a>&nbsp; 
+                        <span style="color:#969696;font-size:140%">■</span>&nbsp;<a href="http://meta.stackoverflow.com/">meta</a>&nbsp; 
+                        <span style="color:#46937D;font-size:140%">■</span>&nbsp;<a href="http://area51.stackexchange.com/">area&nbsp;51</a>&nbsp; 
+                        <span style="color:#C0D0DC;font-size:140%">■</span>&nbsp;<a href="http://webapps.stackexchange.com/">webapps</a>&nbsp; 
+                        <span style="color:#000000;font-size:140%">■</span>&nbsp;<a href="http://gaming.stackexchange.com/">gaming</a>&nbsp; 
+                        <span style="color:#dd4814;font-size:140%">■</span>&nbsp;<a href="http://askubuntu.com/">ubuntu</a>&nbsp; 
+                        <span style="color:#9ce4fe;font-size:140%">■</span>&nbsp;<a href="http://webmasters.stackexchange.com/">webmasters</a>&nbsp; 
+                        <span style="color:#cf4d3f;font-size:140%">■</span>&nbsp;<a href="http://cooking.stackexchange.com/">cooking</a>&nbsp; 
+                        <span style="color:#f4f28d;font-size:140%">■</span>&nbsp;<a href="http://gamedev.stackexchange.com/">game development</a>&nbsp; 
+                        <span style="color:#0f3559;font-size:140%">■</span>&nbsp;<a href="http://math.stackexchange.com/">math</a>&nbsp; 
+                        <span style="color:#f2f2f2;font-size:140%">■</span>&nbsp;<a href="http://photo.stackexchange.com/">photography</a>&nbsp; 
+                        <span style="color:#037187;font-size:140%">■</span>&nbsp;<a href="http://stats.stackexchange.com/">stats</a>&nbsp; 
+                        <span style="color:#f1e7cc;font-size:140%">■</span>&nbsp;<a href="http://tex.stackexchange.com/">tex</a>&nbsp; 
+                        <span style="color:#e1cdae;font-size:140%">■</span>&nbsp;<a href="http://english.stackexchange.com/">english</a>&nbsp; 
+                        <span style="color:#a2d9f6;font-size:140%">■</span>&nbsp;<a href="http://cstheory.stackexchange.com/">theoretical cs</a>&nbsp; 
+                        <span style="color:#1b3e6c;font-size:140%">■</span>&nbsp;<a href="http://programmers.stackexchange.com/">programmers</a>&nbsp; 
+                        <span style="color:#293a5d;font-size:140%">■</span>&nbsp;<a href="http://unix.stackexchange.com/">unix</a>&nbsp;
+                        <span style="color:#bec0cb;font-size:140%">■</span>&nbsp;<a href="http://apple.stackexchange.com/">apple</a>&nbsp;
+                        <span style="color:#939185;font-size:140%">■</span>&nbsp;<a href="http://wordpress.stackexchange.com/">wordpress</a>&nbsp;
+                        <span style="color:#ebf5f5;font-size:140%">■</span>&nbsp;<a href="http://physics.stackexchange.com/">physics</a>&nbsp;
+                        <span style="color:#4176ab;font-size:140%">■</span>&nbsp;<a href="http://diy.stackexchange.com/">home&nbsp;improvement</a>&nbsp;
+                        <span style="color:#d1d8d7;font-size:140%">■</span>&nbsp;<a href="http://gis.stackexchange.com/">gis</a>&nbsp;
+                        <span style="color:#e5e2d3;font-size:140%">■</span>&nbsp;<a href="http://electronics.stackexchange.com/">electrical&nbsp;engineering</a>&nbsp;
+                        <span style="color:#a4c639;font-size:140%">■</span>&nbsp;<a href="http://android.stackexchange.com/">android</a>&nbsp;
+                        <span style="color:#2e4e60;font-size:140%">■</span>&nbsp;<a href="http://security.stackexchange.com/">security</a>&nbsp;
+                        <span style="color:#45bcb5;font-size:140%">■</span>&nbsp;<a href="http://bicycles.stackexchange.com/">bicycles</a>&nbsp;
+                        <span style="color:#00adee;font-size:140%">■</span>&nbsp;<a href="http://dba.stackexchange.com/">dba</a>&nbsp;
+                        <span style="color:#2edaf0;font-size:140%">■</span>&nbsp;<a href="http://drupal.stackexchange.com/">drupal</a>&nbsp;
+                        <span style="color:#213951;font-size:140%">■</span>&nbsp;<a href="http://sharepoint.stackexchange.com/">sharepoint</a>&nbsp;
+                        <span style="color:#73abb3;font-size:140%">■</span>&nbsp;<a href="http://scifi.stackexchange.com/">scifi &amp; fantasy</a>&nbsp;
+                        <span style="color:#23629F;font-size:140%">■</span>&nbsp;<a href="http://ux.stackexchange.com/">user experience</a>&nbsp;
+                        <span style="color:#faff72;font-size:140%">■</span>&nbsp;<a href="http://skeptics.stackexchange.com/">skeptics</a>&nbsp;
+                        <span style="color:#623121;font-size:140%">■</span>&nbsp;<a href="http://rpg.stackexchange.com/">rpg</a>&nbsp;
+                        <span style="color:#e4be88;font-size:140%">■</span>&nbsp;<a href="http://judaism.stackexchange.com/">judaism</a>&nbsp;
+                        <span style="color:#ffecb1;font-size:140%">■</span>&nbsp;<a href="http://mathematica.stackexchange.com/">mathematica</a>&nbsp;
+                </div>
+            </div>
+            <div id="footer-flair">
+                <a class="peer1" href="http://www.peer1.com/stackoverflow"></a>  
+	            <a href="http://creativecommons.org/licenses/by-sa/3.0/" class="cc-wiki-link"></a>
+                <div id="svnrev">rev 2012.8.8.3607</div>
+            </div>
+            <div id="copyright">
+                site design / logo © 2012 stack exchange inc; 
+                user contributions licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc-wiki</a> with <a href="http://blog.stackoverflow.com/2009/06/attribution-required/" rel="license">attribution required</a>
+            </div>
+            
+
+        </div>
+    </div>
+    
+    <noscript>
+        &lt;div id="noscript-warning"&gt;Stack Overflow works best with JavaScript enabled&lt;img src="http://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"&gt;&lt;/div&gt;
+    </noscript>
+    <script type="text/javascript">var _gaq=_gaq||[];_gaq.push(['_setAccount','UA-5620270-1']);
+        _gaq.push(['_setCustomVar', 1, 'tags', '|java|date|iso8601|']); 
+        _gaq.push(['_setCustomVar', 2, 'accountid', '1381377',2]); 
+_gaq.push(['_trackPageview']);
+    var _qevents = _qevents || [];
+    (function(){
+        var s=document.getElementsByTagName('script')[0];
+        var ga=document.createElement('script');
+        ga.type='text/javascript';
+        ga.async=true;
+        ga.src='http://www.google-analytics.com/ga.js';
+        s.parentNode.insertBefore(ga,s);
+        var sc=document.createElement('script');
+        sc.type='text/javascript';
+        sc.async=true;
+        sc.src='http://edge.quantserve.com/quant.js'; 
+        s.parentNode.insertBefore(sc,s);
+    })();
+    </script>
+    <script type="text/javascript">
+        _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+    </script>    
+    
+    <script type="text/javascript" src="./Converting ISO8601-compliant String to java.util.Date - Stack Overflow_files/jquery.min.js"></script><script type="text/javascript" src="./Converting ISO8601-compliant String to java.util.Date - Stack Overflow_files/stub.js"></script>    <script type="text/javascript">
+        
+        StackExchange.ready(function () {
+
+            StackExchange.question.init({votesCast:[],autoShowCommentHelp:true,showAnswerHelp:true,totalCommentCount:8,shownCommentCount:5,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:2201925});
+
+            styleCode();
+
+                StackExchange.realtime.subscribeToQuestion('1', '2201925');
+        });
+    </script>    <script type="text/javascript">
+        StackExchange.init({"stackAuthUrl":"https://stackauth.com","serverTime":1344457736,"styleCode":true,"enableUserHovercards":true,"site":{"name":"Stack Overflow","description":"Q&A for professional and enthusiast programmers","isNoticesTabEnabled":true,"newTitleSearchBoxEnabled":false,"enableSocialMediaInSharePopup":true},"user":{"isRegistered":true,"userId":1314283,"accountId":1381377,"gravatar":"\u003cdiv class=\"\"\u003e\u003cimg src=\"http://www.gravatar.com/avatar/85177b943e4981747bff28edab0870a6?s=32&amp;d=identicon&amp;r=PG\" alt=\"\" width=\"32\" height=\"32\"\u003e\u003c/div\u003e","profileUrl":"http://stackoverflow.com/users/1314283/user1314283","fkey":"353b7459bdbc817ee3ff9a622cdeba88","notificationsUnviewedCount":1,"inboxUnviewedCount":0}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.js":"d1cd9a23171c","js/moderator.js":"8c49fc268737","js/full-anon.js":"d733f15b1938","js/full.js":"aecbfd0fd3e0","js/wmd.js":"93b92575f8bc","js/third-party/jquery.autocomplete.min.js":"e5f01e97f7c3","js/mobile.js":"6eb68240242f","js/help.js":"fc9fb0517db2","js/tageditor.js":"c1ba807b32aa","js/tageditornew.js":"bd66fabe1c71","js/inline-tag-editing.js":"be882e188985","js/revisions.js":"8c6bcd93b7fe","js/suggested-edits.js":"46c4696efca5","js/probes.js":"beb933322ff0"});
+        
+    </script><script type="text/javascript">
+    StackExchange.ready(function() {
+        initTagRenderer("".split(" "), "".split(" "));
+         
+        prepareEditor({
+            heartbeatType: 'answer',
+            bindNavPrevention: true,
+            postfix: "",
+            onDemand: false,
+            discardSelector: ".discard-answer"
+            ,immediatelyShowMarkdownHelp:true
+        });
+        
+    });  
+</script><script type="text/javascript">
+StackExchange.ready(function(){$.get('/posts/2201925/ivc/0d75');});
+</script>
+    
+
+</body></html>
