@@ -1,5 +1,7 @@
 Iorc2::Application.routes.draw do
 
+  resources :regions
+
   resources :titles
 
   resources :references

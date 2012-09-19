@@ -1,4 +1,6 @@
 <%= semantic_form_for @county do |f| %>
+  <%= f.label :Region %>
+	<%= select("county", "region_id", Region.all.collect {|r| [ r.name, r.id ] }, {:include_blank => 'None'}) %>
   <%= f.inputs do %>
     <%= f.input :name %>
   <% end %>

@@ -4,4 +4,5 @@ class Publication < ActiveRecord::Base
   has_many :references, :through => :refpubs
   has_many :countypubs
   has_many :counties, :through => :countypubs
+  has_many :regions, :through => :counties
 end

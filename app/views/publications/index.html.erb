@@ -62,101 +62,62 @@
 
 	
 	<script type="text/javascript" charset="utf8">
-
-
-	var asInitVals = new Array();
-	$(document).ready(function() {
-		var oTable = $('#example').dataTable( {
-				"oLanguage": {
-					"sSearch": "Search all columns:"
-					},
-					"sDom": "<'row'<'span6'l><'span6'f>r>t<'row'<'span6'i><'span6'p>>",
-					"bJQueryUI": true,
-					"sPaginationType": "bootstrap"
-		} );
-		
-		$.extend( $.fn.dataTableExt.oStdClasses, {
-			"sWrapper": "dataTables_wrapper form-inline"
-		} );
-		
-
-
-		$("tfoot input").keyup( function () {
-		/* Filter on the column (the index) of this element */
-			oTable.fnFilter( this.value, $("tfoot input").index(this) );
-		} );
-
-
-
-		/*
-		* Support functions to provide a little bit of 'user friendlyness' to the textboxes in
-		* the footer
-		*/
-		$("tfoot input").each( function (i) {
-			asInitVals[i] = this.value;
-		} );
-
-		$("tfoot input").focus( function () {
-			if ( this.className == "search_init" )
-			{
-				this.className = "";
-				this.value = "";
-			}
-		} );
-
-		$("tfoot input").blur( function (i) {
-			if ( this.value == "" ){
-				this.className = "search_init";
-				this.value = asInitVals[$("tfoot input").index(this)];
-			}
-		} );
-	} );
+$(document).ready(function() {
+	  $('#publications').dataTable( {
+	    sPaginationType: "full_numbers",
+	    bJQueryUI: true,
+	    bProcessing: true,
+	    bServerSide: true,
+	    sAjaxSource: $('#publications').data('source')})
+		.columnFilter({
+					aoColumns: [ 
+						     { type: "text" },
+						     { type: "text" },
+						     { type: "text" },
+						 	 { type: "text" },
+							 { type: "text" },
+							 { type: "text" },
+							 { type: "text" },
+							 { type: "text" }
+						]		
+			});
+	
+	});
 	</script>
 
 <div id="content">
 
-<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example">
+<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="publications" data-source="<%= publications_url(format: "json") %>">
 
 
 	<thead>
   		<tr>
 			<th>Sequence</th>
     		<th>Common Name</th>
-    		<th>Quantity</th>
-			<th>Start Date</th>
-			<th>County</th>
-			<th>Action</th>
+    		<th>Qty</th>
+			<th>Date</th>
+			<th>Year</th>
+			<th>Counties</th>
+			<th>Region</th>
+			<th>References</th>
   		</tr>
 	</thead>
+	<tfoot>
+  		<tr>
+			<th>Seq</th>
+    		<th>Species</th>
+    		<th>Qty</th>
+			<th>Month</th>
+			<th>Year</th>
+			<th>Counties</th>
+			<th>Region</th>
+			<th>References</th>
+  		</tr>
+	</tfoot>
 
 <tbody>
-	<% @publications.each do |publication| %>
-  		<tr>
-			<td><%= publication.bird.sequence %></td>
-    		<td><%= publication.bird.common %></td>
-    		<td><%= publication.quantity %></td>
-			<td><%= publication.start_date.strftime('%Y-%d-%m') unless publication.start_date.nil? %></td>
-			<td><% for county in publication.counties %>
-				 <%= county.name %></br>	
-				<% end %>
-			</td>
-			<td><%= link_to "View Details", publication_path(publication)%></td>
-  		</tr>
-	<% end %>
 </tbody>
 
-<tfoot>
-<tr>
-	<th><input type="text" value="Search Seq" class="search_init" /></th>
-	<th><input type="text" value="Search Species" class="search_init" /></th>
-	<th><input type="text" value="Search Quantity" class="search_init" /></th>
-	<th><input type="text" value="Search Date" class="search_init" /></th>
-	<th><input type="text" value="Search Counties" class="search_init" /></th>
-	<th></th>
-
-
-</tr>
-</tfoot>
 
 
 </table>

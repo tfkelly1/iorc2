@@ -52,6 +52,8 @@ gem 'tabulous'
 
 gem 'chosen-rails'
 
+gem 'will_paginate'
+
 
 
 
