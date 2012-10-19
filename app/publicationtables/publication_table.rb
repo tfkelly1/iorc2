@@ -10,7 +10,7 @@ class PublicationTable
     {
       sEcho: params[:sEcho].to_i,
       iTotalRecords: Publication.count,
-      iTotalDisplayRecords: publications.total_entries,
+      iTotalDisplayRecords: count_publications,
       aaData: data
     }
   end
@@ -62,13 +62,51 @@ private
     if params[:sSearch_4].present?
       publications = publications.where("date_part('year',start_date) = :search4" , search4: "#{params[:sSearch_4]}")
     end
-    if params[:sSearch_6].present?
-      publications = publications.joins(:regions).where("regions.name ilike :search6" , search6: "%#{params[:sSearch_6]}%")
-    end
+
     if params[:sSearch_5].present?
       publications = publications.joins(:counties).where("counties.name ilike :search5" , search5: "%#{params[:sSearch_5]}%")
     end
+    if params[:sSearch_6].present?
+      publications = publications.joins(:regions).where("regions.name ilike :search6" , search6: "%#{params[:sSearch_6]}%")
+    end
+    if params[:sSearch_7].present?
+       publications = publications.joins(:references).where("\"references\".name ilike :search7" , search7: "%#{params[:sSearch_7]}%")
+    end
     publications.group("publications.id,birds.id")
+  end
+  
+  def count_publications
+
+    publications = Publication.includes(:bird)
+
+    
+    if params[:sSearch_0].present?
+      publications = publications.where("birds.sequence = :search0" , search0: "#{params[:sSearch_0]}")
+    end
+    if params[:sSearch_1].present?
+      publications = publications.where("birds.common ilike :search1" , search1: "%#{params[:sSearch_1]}%")
+    end
+    if params[:sSearch_2].present?
+      publications = publications.where("quantity = :search2" , search2: "#{params[:sSearch_2]}")
+    end
+    if params[:sSearch_3].present?
+      publications = publications.where("date_part('month',start_date) = :search4" , search4: "#{params[:sSearch_3]}")
+    end
+    if params[:sSearch_4].present?
+      publications = publications.where("date_part('year',start_date) = :search4" , search4: "#{params[:sSearch_4]}")
+    end
+
+    if params[:sSearch_5].present?
+      publications = publications.joins(:counties).where("counties.name ilike :search5" , search5: "%#{params[:sSearch_5]}%")
+    end
+    if params[:sSearch_6].present?
+      publications = publications.joins(:regions).where("regions.name ilike :search6" , search6: "%#{params[:sSearch_6]}%")
+    end
+    if params[:sSearch_7].present?
+       publications = publications.joins(:references).where("\"references\".name ilike :search7" , search7: "%#{params[:sSearch_7]}%")
+    end
+    publications.group("publications.id,birds.id")
+    publications.length
   end
 
   def page

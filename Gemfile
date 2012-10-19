@@ -54,6 +54,8 @@ gem 'chosen-rails'
 
 gem 'will_paginate'
 
+gem 'devise'
+
 
 
 

@@ -1,5 +1,16 @@
 class PublicationsController  < ApplicationController
   
+  # GET /publications/new
+  # GET /publications/new.json
+  def new
+    @publication = Publication.new
+
+    respond_to do |format|
+      format.html # new.html.erb
+      format.json { render json: @publication }
+    end
+  end
+  
   
   def index
     respond_to do |format|
@@ -37,8 +48,6 @@ class PublicationsController  < ApplicationController
   # PUT /publications/1.json
   def update
     @publication = Publication.find(params[:id])
-
-
     respond_to do |format|
       if @publication.update_attributes(params[:publication])
         format.html { redirect_to @publication, notice: 'Publication was successfully updated.' }
