@@ -1,6 +1,7 @@
 Iorc2::Application.routes.draw do
 
-  devise_for :users
+  devise_for :users,  :controllers => { :registrations => "users/registrations" }
+  resources :users
 
   resources :regions
 

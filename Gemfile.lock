@@ -45,6 +45,7 @@ GEM
     bourbon (2.1.0)
       sass (>= 3.1)
     builder (3.0.0)
+    cancan (1.6.8)
     chosen-rails (0.9.8.1)
       railties (~> 3.0)
       thor (~> 0.14)
@@ -134,6 +135,9 @@ GEM
       railties (~> 3.2.0)
       sass (>= 3.1.10)
       tilt (~> 1.3)
+    simple_form (2.0.4)
+      actionpack (~> 3.0)
+      activemodel (~> 3.0)
     sprockets (2.1.2)
       hike (~> 1.2)
       rack (~> 1.0)
@@ -160,6 +164,7 @@ PLATFORMS
 DEPENDENCIES
   activeadmin
   bootstrap-sass
+  cancan
   chosen-rails
   coffee-rails (~> 3.2.1)
   devise
@@ -169,6 +174,7 @@ DEPENDENCIES
   pg
   rails (= 3.2.1)
   sass-rails (~> 3.2.3)
+  simple_form
   tabulous
   uglifier (>= 1.0.3)
   will_paginate

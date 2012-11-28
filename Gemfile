@@ -41,7 +41,6 @@ gem 'jquery-rails'
 
 gem 'activeadmin'
 
-
 group :assets do
   gem 'jquery-ui-rails'
 end
@@ -49,12 +48,11 @@ end
 gem 'jquery_datepicker'
 
 gem 'tabulous'
-
 gem 'chosen-rails'
-
 gem 'will_paginate'
-
 gem 'devise'
+gem 'cancan'
+gem 'simple_form'
 
 
 

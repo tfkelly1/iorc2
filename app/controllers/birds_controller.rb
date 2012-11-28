@@ -1,4 +1,7 @@
 class BirdsController < ApplicationController
+  
+  load_and_authorize_resource
+  
   # GET /birds
   # GET /birds.json
   def index

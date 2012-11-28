@@ -5,3 +5,12 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+puts 'CREATING ROLES'
+Role.create([
+  { :name => 'admin' }, 
+  { :name => 'recordsSecretary' }, 
+  { :name => 'recordsCommittee' },
+  { :name => 'dataEntry'},
+  { :name => 'seasonalEditor'},
+  { :name => 'emeritus'}
+], :without_protection => true)
