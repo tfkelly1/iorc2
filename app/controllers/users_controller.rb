@@ -35,7 +35,7 @@ class UsersController < ApplicationController
       authorize! :create, @user, :message => 'Not authorized as an administrator.'
       @user = User.find(params[:id])
       if @user.save(params[:user], :as => :admin)
-        redirect_to users_path, :notice => "User updated."
+        format.html { redirect_to :action => :index }
       else
         redirect_to users_path, :alert => "Unable to update user."
       end
