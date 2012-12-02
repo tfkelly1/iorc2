@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121119203502) do
+ActiveRecord::Schema.define(:version => 20121202033035) do
 
   create_table "birds", :force => true do |t|
     t.string   "common"
@@ -23,9 +23,11 @@ ActiveRecord::Schema.define(:version => 20121119203502) do
 
   create_table "counties", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
     t.integer  "region_id"
+    t.string   "created_by_id"
+    t.string   "updated_by_id"
   end
 
   create_table "countypubs", :force => true do |t|
@@ -139,6 +141,8 @@ ActiveRecord::Schema.define(:version => 20121119203502) do
     t.datetime "locked_at"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
+    t.string   "created_by_id"
+    t.string   "updated_by_id"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

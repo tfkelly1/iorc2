@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  include SentientUser
+  
   has_many :userroles
   has_many :roles, :through => :userroles
   
@@ -13,7 +15,7 @@ class User < ActiveRecord::Base
   attr_accessible :role_ids, :as => :admin 
   attr_accessible :email, :password, :password_confirmation, :remember_me, :role_ids
   
-  
+  track_who_does_it
   
   def has_role?(role_sym)
     roles.any? { |r| r.name.underscore.to_sym == role_sym }

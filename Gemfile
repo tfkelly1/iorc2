@@ -1,14 +1,14 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.1'
+gem 'rails', '3.2.9'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
 
-gem 'sass-rails',   '~> 3.2.3'
-gem 'coffee-rails', '~> 3.2.1'
+gem 'sass-rails',   '~> 3.2.5'
+gem 'coffee-rails', '~> 3.2.2'
 gem 'bootstrap-sass'
 # Gems used only for assets and not required
 # in production environments by default.
@@ -54,6 +54,8 @@ gem 'devise'
 gem 'cancan'
 gem 'simple_form'
 gem 'haml-rails'
+gem 'clerk'
+gem 'sentient_user'
 
 
 

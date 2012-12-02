@@ -3,6 +3,8 @@
 <table>
   <tr>
     <th>Name</th>
+    <th>Created By</th>
+    <th>Updated By</th>
     <th></th>
     <th></th>
     <th></th>
@@ -11,6 +13,8 @@
 <% @counties.each do |county| %>
   <tr>
     <td><%= county.name %></td>
+    <td><%= county.creator.email unless county.creator.nil? %></td>
+    <td><%= county.updater.email unless county.updater.nil? %></td>
     <td><%= link_to 'Show', county %></td>
     <td><%= link_to 'Edit', edit_county_path(county) %></td>
     <td><%= link_to 'Destroy', county, confirm: 'Are you sure?', method: :delete %></td>
