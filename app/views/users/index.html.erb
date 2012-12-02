@@ -1,4 +1,12 @@
 <h3>Users</h3>
+
+<style type="text/css">
+#userModal {
+	margin: -100px 0 0 -280px; /* PLAY THE WITH THE VALUES TO SEE GET THE DESIRED EFFECT */
+}
+
+</style>
+
 <div class="span8">
 <table class="table table-condensed">
 	  <thead>
@@ -25,4 +33,41 @@
   <% end %>
   </tbody>
 </table>
-</div>_path %>
+
+
+<% flash.each do |key, value| %>
+	<div id="userModal" class="modal">
+		<div class="modal-header">
+	      <a class="close" id="close1" data-dismiss="modal">&#215;</a>
+	      <h3>Change Role</h3>
+	    </div>
+   		<div class="modal-body">
+    		<center><strong><%= value %></strong></center>
+  		</div>
+	    <div class="modal-footer">
+	      <a class="btn" id="close2" data-dismiss="userModal">Close</a>
+	    </div>
+	</div>
+<%end%>
+
+</div>
+
+<script type="text/javascript">
+$('#userModal').click( function ( event ) {
+    switch( event.target.id ) {
+        case "close1":
+            $(this).slideUp('slow', function() {
+			    // Animation complete.
+			  });
+            break;
+        case "close2":
+            $(this).slideUp('slow', function() {
+			    // Animation complete.
+			  });
+            break;
+    }
+
+});
+
+
+</script>

@@ -53,6 +53,7 @@ gem 'will_paginate'
 gem 'devise'
 gem 'cancan'
 gem 'simple_form'
+gem 'haml-rails'
 
 
 

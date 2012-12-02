@@ -120,9 +120,7 @@
 			    <th>Common</th>
 			    <th>Scientific</th>
 			    <th>Sequence</th>
-			    <th>Actions</th>
-				<th></th>
-				<th></th>
+
 	  		</tr>
 		</thead>
 
@@ -132,9 +130,6 @@
 			    <td><%= bird.common %></td>
 			    <td><%= bird.scientific %></td>
 			    <td><%= bird.sequence %></td>
-			    <td><%= link_to 'Show', bird %></td>
-			    <td><%= link_to 'Edit', edit_bird_path(bird) %></td>
-			    <td><%= link_to 'Destroy', bird, confirm: 'Are you sure?', method: :delete %></td>
 	  		</tr>
 		<% end %>
 	</tbody>
@@ -144,11 +139,6 @@
 		<th><input type="text" value="Search Common" class="search_init" /></th>
 		<th><input type="text" value="Search Scientific" class="search_init" /></th>
 		<th><input type="text" value="Search Sequence" class="search_init" /></th>
-		<th></th>
-		<th></th>
-		<th></th>
-
-
 	</tr>
 	</tfoot>
 
