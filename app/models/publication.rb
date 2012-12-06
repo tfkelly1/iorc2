@@ -5,4 +5,5 @@ class Publication < ActiveRecord::Base
   has_many :countypubs
   has_many :counties, :through => :countypubs
   has_many :regions, :through => :counties
+  track_who_does_it
 end

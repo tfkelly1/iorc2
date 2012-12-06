@@ -11,14 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121202033035) do
+ActiveRecord::Schema.define(:version => 20121205165257) do
 
   create_table "birds", :force => true do |t|
     t.string   "common"
     t.string   "scientific"
     t.integer  "sequence"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+    t.string   "created_by_id"
+    t.string   "updated_by_id"
   end
 
   create_table "counties", :force => true do |t|
@@ -38,38 +40,43 @@ ActiveRecord::Schema.define(:version => 20121202033035) do
   end
 
   create_table "publications", :force => true do |t|
-    t.integer  "quantity",   :null => false
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "quantity",      :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
     t.integer  "bird_id"
     t.date     "start_date"
     t.date     "end_date"
     t.string   "observers"
     t.text     "details"
     t.string   "location"
+    t.string   "created_by_id"
+    t.string   "updated_by_id"
   end
 
   create_table "records", :force => true do |t|
-    t.integer  "status_id",    :null => false
-    t.integer  "quantity",     :null => false
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.integer  "status_id",     :null => false
+    t.integer  "quantity",      :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
     t.integer  "bird_id"
     t.string   "age_gender"
-    t.string   "finders"
+    t.string   "observers"
     t.date     "start_date"
     t.date     "end_date"
     t.text     "details"
     t.string   "location"
     t.string   "number"
-    t.integer  "reference_id"
+    t.string   "created_by_id"
+    t.string   "updated_by_id"
   end
 
   create_table "references", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
     t.string   "volume"
     t.string   "name"
+    t.string   "created_by_id"
+    t.string   "updated_by_id"
   end
 
   create_table "refpubs", :force => true do |t|
@@ -79,16 +86,27 @@ ActiveRecord::Schema.define(:version => 20121202033035) do
     t.datetime "updated_at",     :null => false
   end
 
+  create_table "refrecords", :force => true do |t|
+    t.integer  "record_id"
+    t.integer  "reference_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
   create_table "regions", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+    t.string   "created_by_id"
+    t.string   "updated_by_id"
   end
 
   create_table "roles", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+    t.string   "created_by_id"
+    t.string   "updated_by_id"
   end
 
   create_table "siglers", :force => true do |t|
@@ -98,24 +116,13 @@ ActiveRecord::Schema.define(:version => 20121202033035) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "specifics", :force => true do |t|
-    t.string   "commonname"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "statuses", :force => true do |t|
-    t.string   "name",        :null => false
+    t.string   "name",          :null => false
     t.string   "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-  end
-
-  create_table "taxons", :force => true do |t|
-    t.string   "scientificname"
-    t.integer  "specific_id"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+    t.string   "created_by_id"
+    t.string   "updated_by_id"
   end
 
   create_table "userroles", :force => true do |t|
@@ -143,6 +150,7 @@ ActiveRecord::Schema.define(:version => 20121202033035) do
     t.datetime "updated_at",                             :null => false
     t.string   "created_by_id"
     t.string   "updated_by_id"
+    t.string   "name"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

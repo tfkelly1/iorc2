@@ -6,6 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 puts 'CREATING ROLES'
+if Role.count == 0
 Role.create([
   { :name => 'admin' }, 
   { :name => 'recordsSecretary' }, 
@@ -14,3 +15,11 @@ Role.create([
   { :name => 'seasonalEditor'},
   { :name => 'emeritus'}
 ], :without_protection => true)
+end
+
+puts 'CREATING USERS'
+
+user = User.find_or_create_by_name! :name => 'admin1', :email => 'admin1@admin.com', :password => 'please', :password_confirmation => 'please'
+puts 'New user created: ' << user.name
+role = Role.find_by_name("admin")
+user.role_ids = [role.id]

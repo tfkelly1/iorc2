@@ -69,8 +69,8 @@
 	<%= f.label :Age_and_Gender %>
 	<%= f.text_field :age_gender %>
 	
-	<%= f.label :finders %>
-	<%= f.text_field :finders %>
+	<%= f.label :observers %>
+	<%= f.text_field :observers %>
 	
 	<%= f.label :location %>
 	<%= f.text_field :location %>
@@ -78,8 +78,8 @@
 	<%= f.label :Counties %>
 	<%= f.select(:county_ids, County.all.collect {|c| [ c.name, c.id ] }, {:include_blank => 'None'}, {:multiple =>true}) %>
 	
-	<%= f.label :Reference %>
-	<%= select("record", "reference_id", Reference.all.collect {|r| [ r.name, r.id ] }, {:include_blank => 'None'}) %>
+	<%= f.label :References %>
+	<%= f.select(:reference_ids, Reference.all.collect {|r| [ r.name, r.id ] }, {:include_blank => 'None'}, {:multiple =>true}) %>
 	
 	<br/>
 	<br/>

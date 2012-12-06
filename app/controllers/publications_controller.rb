@@ -1,10 +1,9 @@
 class PublicationsController  < ApplicationController
   
+  load_and_authorize_resource
   # GET /publications/new
   # GET /publications/new.json
   def new
-    @publication = Publication.new
-
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @publication }
@@ -13,6 +12,7 @@ class PublicationsController  < ApplicationController
   
   
   def index
+    @publications = Publication.all
     respond_to do |format|
       format.html
       format.json { render json: PublicationTable.new(view_context) }
@@ -21,13 +21,11 @@ class PublicationsController  < ApplicationController
   
   
   def show
-    @publication = Publication.find(params[:id])
   end
   
   # POST /publications.json
   # POST /publications.json
   def create
-    @publication = Publication.new(params[:publication])
     respond_to do |format|
       if @publication.save
         format.html { redirect_to @publication, notice: 'Published Record was successfully created.' }
@@ -41,13 +39,11 @@ class PublicationsController  < ApplicationController
   
   # GET /publications/1/edit
   def edit
-    @publication = Publication.find(params[:id])
   end
   
   # PUT /publications/1
   # PUT /publications/1.json
   def update
-    @publication = Publication.find(params[:id])
     respond_to do |format|
       if @publication.update_attributes(params[:publication])
         format.html { redirect_to @publication, notice: 'Publication was successfully updated.' }

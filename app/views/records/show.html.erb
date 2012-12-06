@@ -43,8 +43,8 @@
 	<dd><%= @record.age_gender %></dd>
 	<br/>
 	
-	<dt>Finder(s)</dt>
-	<dd><%= @record.finders %></dd>
+	<dt>Observers(s)</dt>
+	<dd><%= @record.observers %></dd>
 	<br/>
 	
 	<dt>Location</dt>
@@ -57,8 +57,10 @@
 	<% end %>
 	<br/>
 	
-	<dt>Published In</dt>
-  <dd><%= @record.reference.name  unless @record.reference.nil? %>%></dd>
+	<dt>References</dt>
+	<% for reference in @record.references %>
+	<dd><%= reference.name %></dd>	
+	<% end %>
 	
 	<br/>
 	<br/>
