@@ -68,7 +68,18 @@ $(document).ready(function() {
 	    bJQueryUI: true,
 	    bProcessing: true,
 	    bServerSide: true,
-	    sAjaxSource: $('#publications').data('source')})
+	    sAjaxSource: $('#publications').data('source'),
+		aoColumns: [ 
+			     { 'bSortable': true },
+			     { 'bSortable': true },
+			     { 'bSortable': true  },
+			 	 { 'bSortable': true },
+				 { 'bSortable': true },
+				 { 'bSortable': false  },
+				 { 'bSortable': false  },
+				 { 'bSortable': false }
+			]
+	})
 		.columnFilter({
 					aoColumns: [ 
 						     { type: "text" },
@@ -78,7 +89,7 @@ $(document).ready(function() {
 							 { type: "text" },
 							 { type: "text" },
 							 { type: "text" },
-							 { type: "text" }
+							 { type: "text"}
 						]		
 			});
 	
