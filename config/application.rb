@@ -58,5 +58,6 @@ module Iorc2
     
     
     config.assets.initialize_on_precompile = false
+    # testing 123
   end
 end
