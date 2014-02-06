@@ -55,5 +55,15 @@ class PublicationsController  < ApplicationController
     end
   end
   
+  # DELETE /records/1
+  # DELETE /records/1.json
+  def destroy
+    @publication.destroy
+    respond_to do |format|
+      format.html { redirect_to publications_url }
+      format.json { head :no_content }
+    end
+  end
+  
   
 end

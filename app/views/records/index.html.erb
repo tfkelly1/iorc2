@@ -125,6 +125,7 @@
     		<th>Status</th>
 			<th>Year</th>
 			<th>County</th>
+			<th>Reference</th>
 			<th>Action</th>
   		</tr>
 	</thead>
@@ -140,6 +141,10 @@
 				 <%= county.name %></br>	
 				<% end %>
 			</td>
+			<td><% for reference in record.references %>
+				 <%= reference.name %></br>	
+				<% end %>
+			</td>
 			<td><%= link_to "View Details", record_path(record)%></td>
   		</tr>
 	<% end %>
@@ -152,6 +157,7 @@
 	<th><input type="text" value="Search Status" class="search_init" /></th>
 	<th><input type="text" value="Search Year" class="search_init" /></th>
 	<th><input type="text" value="Search Counties" class="search_init" /></th>
+	<th><input type="text" value="Search References" class="search_init" /></th>
 	<th></th>
 
 
