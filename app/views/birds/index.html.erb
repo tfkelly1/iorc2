@@ -120,6 +120,7 @@
 			    <th>Common</th>
 			    <th>Scientific</th>
 			    <th>Sequence</th>
+				<th>Action</th>
 
 	  		</tr>
 		</thead>
@@ -130,6 +131,7 @@
 			    <td><%= bird.common %></td>
 			    <td><%= bird.scientific %></td>
 			    <td><%= bird.sequence %></td>
+			<td><%= link_to "View", bird_path(record)%></td>
 	  		</tr>
 		<% end %>
 	</tbody>
