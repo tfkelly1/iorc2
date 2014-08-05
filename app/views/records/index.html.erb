@@ -72,7 +72,8 @@
 					},
 					"sDom": "<'toolbar'<'span3'l><'span9'>r>t<'row'<'span6'i><'span6'p>>",
 					"bJQueryUI": true,
-					"sPaginationType": "bootstrap"
+					"sPaginationType": "bootstrap",
+					"bAutoWidth": false
 		} );
 		
 		$.extend( $.fn.dataTableExt.oStdClasses, {
@@ -115,50 +116,50 @@
 
 <div id="content">
 
-<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example">
+<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example" style="width:980px clear:both">
 
 
 	<thead>
   		<tr>
-			<th>Sequence</th>
-    		<th>Species</th>
-    		<th>Status</th>
-			<th>Year</th>
-			<th>County</th>
-			<th>Reference</th>
-			<th>Action</th>
+			<th style=" display: inline !important width: 50px;">Seq</th>
+    		<th style="width: 250px;">Species</th>
+    		<th style="width: 100px;">Status</th>
+			<th style="width: 50px;">Year</th>
+			<th style="width: 100px;">County</th>
+			<th style="width: 150px;">Reference</th>
+			<th style="width: 70px;">Action</th>
   		</tr>
 	</thead>
 
 <tbody>
 	<% @records.each do |record| %>
   		<tr>
-			<td><%= record.bird.sequence %></td>
-    		<td><%= record.bird.common %></td>
-    		<td><%= record.status.name %></td>
-			<td><%= record.start_date.year unless record.start_date.nil? %></td>
-			<td><% for county in record.counties %>
+			<td style="width: 50px;"><%= record.bird.sequence %></td>
+    		<td style="width: 250px;"><%= record.bird.common %></td>
+    		<td style="width: 100px;"><%= record.status.name %></td>
+			<td style="width: 50px;"><%= record.start_date.year unless record.start_date.nil? %></td>
+			<td style="width: 100px;"><% for county in record.counties %>
 				 <%= county.name %></br>	
 				<% end %>
 			</td>
-			<td><% for reference in record.references %>
+			<td style="width: 150px;"><% for reference in record.references %>
 				 <%= reference.name %></br>	
 				<% end %>
 			</td>
-			<td><%= link_to "View", record_path(record)%></td>
+			<td style="width: 75px;"><%= link_to "View", record_path(record)%></td>
   		</tr>
 	<% end %>
 </tbody>
 
 <tfoot>
 <tr>
-	<th><input type="text" value="Search Sequence" class="search_init" /></th>
-	<th><input type="text" value="Search Species" class="search_init" /></th>
-	<th><input type="text" value="Search Status" class="search_init" /></th>
-	<th><input type="text" value="Search Year" class="search_init" /></th>
-	<th><input type="text" value="Search Counties" class="search_init" /></th>
-	<th><input type="text" value="Search References" class="search_init" /></th>
-	<th></th>
+	<th style="width: 50px;"><input type="text" placeholder="Search Sequence" class="search_init" style="width:50px" /></th>
+	<th style="width: 250px;"><input type="text" placeholder="Search Taxon" class="search_init"  style="width:250px" /></th>
+	<th style="width: 100px;"><input type="text" placeholder="Search Status" class="search_init"  style="width:100px"/></th>
+	<th style="width: 50px;"><input type="text"  placeholder="Search Year" class="search_init"  style="width:50px" /></th>
+	<th style="width: 100px;"><input type="text" placeholder="Search County" class="search_init"  style="width:100px"/></th>
+	<th style="width: 150px;"><input type="text" placeholder="Search Reference" class="search_init"  style="width:150px" /></th>
+	<th style="width: 75px;"></th>
 
 
 </tr>
