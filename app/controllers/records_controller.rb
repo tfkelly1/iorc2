@@ -6,8 +6,8 @@ class RecordsController < ApplicationController
   def index
     @records = Record.all
     respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @records }
+      format.html
+      format.json { render json: RecordTable.new(view_context) }
     end
   end
 
