@@ -36,9 +36,9 @@ private
 
   def fetch_records
     if params[:iSortCol_0].to_i == 3
-      records = Record.includes(:bird).order("#{sort_year} #{sort_direction}")
+      records = Record.includes(:bird).includes(:status).order("#{sort_year} #{sort_direction}")
     else
-      records = Record.includes(:bird).order("#{sort_column} #{sort_direction}")
+      records = Record.includes(:bird).includes(:status).order("#{sort_column} #{sort_direction}")
     end
       
     records = records.page(page).per_page(per_page)
@@ -62,7 +62,7 @@ private
     if params[:sSearch_5].present?
        records = records.joins(:references).where("\"references\".name ilike :search5" , search5: "%#{params[:sSearch_5]}%")
     end
-    records.group("records.id,birds.id,statuses_id")
+    records.group("records.id,birds.id")
   end
   
   def count_records
@@ -87,7 +87,7 @@ private
     if params[:sSearch_5].present?
        records = records.joins(:references).where("\"references\".name ilike :search5" , search5: "%#{params[:sSearch_5]}%")
     end
-    records.group("records.id,birds.id,statuses.id")
+    records.group("records.id,birds.id")
     records.length
   end
 
