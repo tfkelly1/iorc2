@@ -23,7 +23,7 @@ private
         h(record.bird.sequence),
         h(record.bird.common),
         h(record.status.name),
-        h(record.start_date.year) unless record.start_date == nil,
+        h(record.start_date.year),
         h(get_counties(record)),
         h(get_references(record))
       ]
