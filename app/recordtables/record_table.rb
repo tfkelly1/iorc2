@@ -10,7 +10,7 @@ class RecordTable
     {
       sEcho: params[:sEcho].to_i,
       iTotalRecords: Record.count,
-      iTotalDisplayRecords: count_records,
+      iTotalDisplayRecords: records.length,
       aaData: data
     }
   end
