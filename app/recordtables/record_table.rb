@@ -62,7 +62,7 @@ private
     if params[:sSearch_5].present?
        records = records.joins(:references).where("\"references\".name ilike :search5" , search5: "%#{params[:sSearch_5]}%")
     end
-    records.group("records.id,birds.id")
+    records.group("records.id,birds.id,statuses_id")
   end
   
   def count_records
@@ -87,7 +87,7 @@ private
     if params[:sSearch_5].present?
        records = records.joins(:references).where("\"references\".name ilike :search5" , search5: "%#{params[:sSearch_5]}%")
     end
-    records.group("records.id,birds.id")
+    records.group("records.id,birds.id,statuses_id")
     records.length
   end
 
