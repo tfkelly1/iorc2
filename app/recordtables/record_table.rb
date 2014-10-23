@@ -67,7 +67,7 @@ private
   
   def count_records
 
-    records = Record.includes(:bird)
+    records = Record.includes(:bird).includes(:status)
    
     if params[:sSearch_0].present?
       records = records.where("birds.sequence = :search0" , search0: "#{params[:sSearch_0]}")
