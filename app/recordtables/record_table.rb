@@ -66,8 +66,6 @@ private
   end
   
   def count_records
-
-    records = Record.includes(:bird).includes(:status)
    
     if params[:sSearch_0].present?
       records = records.where("birds.sequence = :search0" , search0: "#{params[:sSearch_0]}")
@@ -87,7 +85,6 @@ private
     if params[:sSearch_5].present?
        records = records.joins(:references).where("\"references\".name ilike :search5" , search5: "%#{params[:sSearch_5]}%")
     end
-    records.group("records.id,birds.id,statuses.id")
     records.length
   end
 
@@ -100,7 +97,7 @@ private
   end
 
   def sort_column
-    columns = %w[birds.sequence birds.common quantity]
+    columns = %w[birds.sequence birds.common statuses.name]
     columns[params[:iSortCol_0].to_i]
   end
 
