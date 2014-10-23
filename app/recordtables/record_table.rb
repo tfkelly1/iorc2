@@ -76,7 +76,7 @@ private
       records = records.where("birds.common ilike :search1" , search1: "%#{params[:sSearch_1]}%")
     end
     if params[:sSearch_2].present?
-      records = records.where("status.name = :search2" , search2: "#{params[:sSearch_2]}")
+      records = records.where("statuses.name ilike :search2" , search2: "#{params[:sSearch_2]}")
     end
     if params[:sSearch_3].present?
       records = records.where("date_part('year',start_date) = :search3" , search3: "#{params[:sSearch_3]}")
