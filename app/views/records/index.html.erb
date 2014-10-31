@@ -71,6 +71,11 @@
 				    "bJQueryUI": true,
 				    "bProcessing": true,
 				    "bServerSide": true,
+
+				       if(e.keyCode == 13) {
+				        oTable.fnFilter(this.value);   
+				    }
+				   });
 				    "sAjaxSource": $('#example').data('source'),
 						aoColumns: [ 
 							     { 'bSortable': true },
@@ -99,11 +104,13 @@
 			"sWrapper": "dataTables_wrapper form-inline"
 		} );
 		
+		$('#example input').unbind();
 
-
-		$("tfoot input").keyup( function () {
+		$("tfoot input").keyup( function (e) {
 		/* Filter on the column (the index) of this element */
-			oTable.fnFilter( this.value, $("tfoot input").index(this) );
+			if(e.keyCode == 13) {
+				oTable.fnFilter( this.value, $("tfoot input").index(this) );
+			}
 		} );
 
 
@@ -138,15 +145,7 @@
 		var tmp = nTds[6].innerHTML;
 		window.location.href = "/records/ " + tmp;
 	} );
-	
-	$(document).on('hover', '#example tr', function(){
-	        $(this).css('background-color', '#ff0')
-	    }, function() {
-	        $(this).css('background-color', '')
-	    }
-	);​
-	
-
+​
 </script>
 
 <div id="content">
