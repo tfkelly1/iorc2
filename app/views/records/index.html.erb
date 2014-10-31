@@ -70,8 +70,7 @@
 				    "sPaginationType": "full_numbers",
 				    "bJQueryUI": true,
 				    "bProcessing": true,
-				    "bServerSide": true
-				   });
+				    "bServerSide": true,
 				    "sAjaxSource": $('#example').data('source'),
 						aoColumns: [ 
 							     { 'bSortable': true },
@@ -102,7 +101,7 @@
 		
 		$('#example input').unbind();
 
-		$("tfoot input").keyup( function (e) {
+		$("tfoot input").keyup( function () {
 		/* Filter on the column (the index) of this element */
 			if(e.keyCode == 13) {
 				oTable.fnFilter( this.value, $("tfoot input").index(this) );
@@ -142,6 +141,7 @@
 		window.location.href = "/records/ " + tmp;
 	} );
 ​
+	
 </script>
 
 <div id="content">
