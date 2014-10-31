@@ -139,14 +139,12 @@
 		window.location.href = "/records/ " + tmp;
 	} );
 	
-	$(function() {
-	    $(".example").hover(
-	    function() {
+	$(document).on('hover', '#example tr', function(){
 	        $(this).css('background-color', '#ff0')
 	    }, function() {
 	        $(this).css('background-color', '')
-	    });
-	});​
+	    }
+	);​
 	
 
 </script>
