@@ -78,7 +78,8 @@
 							     { 'bSortable': true },
 							 	 { 'bSortable': true },
 								 { 'bSortable': false },
-								 { 'bSortable': false }
+								 { 'bSortable': false },
+								 { 'bVisible': false}
 							]
 					})
 						.columnFilter({
@@ -88,7 +89,9 @@
 										     { type: "text" },
 										 	 { type: "text" },
 											 { type: "text" },
-											 { type: "text"}
+											 { type: "text"},
+											 { type: "text"},
+											 { }
 										]		
 							});
 		
@@ -143,6 +146,7 @@
 			<th style="width: 50px;">Year</th>
 			<th style="width: 100px;">County</th>
 			<th style="width: 150px;">Reference</th>
+			<th></th>
   		</tr>
 	</thead>
 
@@ -155,6 +159,7 @@
 	<th style="width: 50px;"><input type="text"  placeholder="Search Year" class="search_init"  style="width:50px" /></th>
 	<th style="width: 100px;"><input type="text" placeholder="Search County" class="search_init"  style="width:100px"/></th>
 	<th style="width: 150px;"><input type="text" placeholder="Search Reference" class="search_init"  style="width:150px" /></th>
+	<th></th>
 </tr>
 </tfoot>
 

@@ -26,6 +26,7 @@ private
         h(record.start_date.year),
         h(get_counties(record)),
         h(get_references(record))
+        h(record.id)
       ]
     end
   end
