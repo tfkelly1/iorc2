@@ -3,7 +3,7 @@
 	@import "http://datatables.net/media/css/header.ccss";
 	@import "http://datatables.net/release-datatables/media/css/demo_table_jui.css";
 
-
+	th.dpass, td.dpass {display: none;}
 	
 	div.dataTables_length label {
 		float: left;
@@ -79,7 +79,7 @@
 							 	 { 'bSortable': true },
 								 { 'bSortable': false },
 								 { 'bSortable': false },
-								 { 'bVisible': false}
+								 { 'sClass': 'dpass'}
 							]
 					})
 						.columnFilter({
