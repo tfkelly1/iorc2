@@ -139,8 +139,17 @@
 		window.location.href = "/records/ " + tmp;
 	} );
 	
+	$(function() {
+	    $(".forum").hover(
+	    function() {
+	        $(this).css('background-color', '#ff0')
+	    }, function() {
+	        $(this).css('background-color', '')
+	    });
+	});​
+	
 
-	</script>
+</script>
 
 <div id="content">
 
