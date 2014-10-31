@@ -87,7 +87,8 @@
 				    "bJQueryUI": true,
 				    "bProcessing": true,
 				    "bServerSide": true,
-					"aaSorting": [[ 3, "desc" ], [1, "asc"]],
+				//	"aaSorting": [[ 3, "desc" ], [1, "asc"]],
+					
 				    "sAjaxSource": $('#example').data('source'),
 					"fnInitComplete": function() {
 						this.fnAdjustColumnSizing(true);
@@ -116,7 +117,7 @@
 										]		
 							});
 
-							
+		oTable.fnSort( [ [3,'desc'], [1,'asc'] ] );					
 		
 		$.extend( $.fn.dataTableExt.oStdClasses, {
 			"sWrapper": "dataTables_wrapper form-inline"
