@@ -102,11 +102,8 @@
 		$('#example input').unbind();
 
 		$("tfoot input").keyup( function (e) {
-			alert("check 1");
-			alert("key code: " + e.keyCode);
 		/* Filter on the column (the index) of this element */
 			if(e.keyCode == 13) {
-				alert("check 2");
 				oTable.fnFilter( this.value, $("tfoot input").index(this) );
 			}
 		} );
