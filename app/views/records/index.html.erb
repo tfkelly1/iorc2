@@ -138,6 +138,15 @@
 		var tmp = nTds[6].innerHTML;
 		window.location.href = "/records/ " + tmp;
 	} );
+	
+	$(function() {
+	    $(".forum").hover(
+	    function() {
+	        $(this).css('background-color', '#ff0')
+	    }, function() {
+	        $(this).css('background-color', '')
+	    });
+	});​
 	</script>
 
 <div id="content">
