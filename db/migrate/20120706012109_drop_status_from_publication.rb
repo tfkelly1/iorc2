@@ -1,4 +1,4 @@
-class DropStatusFromPublication < ActiveRecord::Migration
+class DropStatusFromPublication < ActiveRecord::Migration[4.2]
 def self.up
   remove_column :publications, :status_id
 end

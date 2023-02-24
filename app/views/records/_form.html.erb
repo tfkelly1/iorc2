@@ -7,8 +7,6 @@
 });
 
 </script>
-<%= stylesheet_link_tag "jquery.multiSelect.css" %>
-<%= stylesheet_link_tag "jquery-ui-1.8.19.custom.css" %>
 
 
 <style>
@@ -50,34 +48,61 @@
 	<%= f.label :number %>
 	<%= f.text_field :number %>
 
+	<br/>
+	<br/>
+
 	<%= f.label :Bird %>
 	<%= select("record", "bird_id", Bird.all.collect {|b| [ b.common, b.id ] }, {:include_blank => 'None'}) %>
-	    <%= f.label :status %>
+	
+	<br/>
+	<br/>
+	
+	<%= f.label :status %>
 	<%= select("record", "status_id", Status.all.collect {|s| [ s.name, s.id ] }, {:include_blank => 'None'}) %>
 	
+	<br/>
+	<br/>
 	<%= f.label :Quantity %>
-    <%= f.text_field :quantity %>
+  <%= f.text_field :quantity %>
+
+	<br/>
+	<br/>
 
 	<%= f.label :Start_Date %>
-	<%= f.text_field :start_date %>
-	<%= f.hidden_field :start_date, :id => "alt_start_date", :as=>:hidden %>
+	<%= f.date_select :start_date %>
+
+	<br/>
+	<br/>
 	
 	<%= f.label :End_Date %>
-	<%= f.text_field :end_date %>
-	<%= f.hidden_field :end_date, :id => "alt_end_date" %>
+	<%= f.date_select :end_date %>
+
+	<br/>
+	<br/>
 	
 	<%= f.label :Age_and_Gender %>
 	<%= f.text_field :age_gender %>
+
+	<br/>
+	<br/>
 	
 	<%= f.label :observers %>
 	<%= f.text_field :observers %>
+
+	<br/>
+	<br/>
 	
 	<%= f.label :location %>
 	<%= f.text_field :location %>
 
+	<br/>
+	<br/>
+
 	<%= f.label :Counties %>
 	<%= f.select(:county_ids, County.all.collect {|c| [ c.name, c.id ] }, {:include_blank => 'None'}, {:multiple =>true}) %>
 	
+	<br/>
+	<br/>
 	<%= f.label :References %>
 	<%= f.select(:reference_ids, Reference.all.collect {|r| [ r.name, r.id ] }, {:include_blank => 'None'}, {:multiple =>true}) %>
 	

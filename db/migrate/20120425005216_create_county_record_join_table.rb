@@ -1,4 +1,4 @@
-class CreateCountyRecordJoinTable < ActiveRecord::Migration
+class CreateCountyRecordJoinTable < ActiveRecord::Migration[4.2]
   def self.up
     create_table :counties_records, :id => false do |t|
       t.integer :county_id

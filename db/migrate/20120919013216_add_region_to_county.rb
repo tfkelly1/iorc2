@@ -1,4 +1,4 @@
-class AddRegionToCounty < ActiveRecord::Migration
+class AddRegionToCounty < ActiveRecord::Migration[4.2]
 def self.up
   add_column :counties, :region_id, :integer
 end

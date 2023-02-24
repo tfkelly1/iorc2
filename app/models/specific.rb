@@ -1,3 +1,3 @@
-class Specific < ActiveRecord::Base
+class Specific < ApplicationRecord
   has_many :taxons
 end

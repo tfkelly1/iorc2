@@ -1,4 +1,4 @@
-class Status < ActiveRecord::Base
+class Status < ApplicationRecord
   has_many :records
-  track_who_does_it
+  #track_who_does_it
 end

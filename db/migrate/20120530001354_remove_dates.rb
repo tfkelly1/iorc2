@@ -1,4 +1,4 @@
-class RemoveDates < ActiveRecord::Migration
+class RemoveDates < ActiveRecord::Migration[4.2]
 def self.up
   remove_column :records, :start_date
   remove_column :records, :end_date

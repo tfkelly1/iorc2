@@ -1,4 +1,4 @@
-class AddReferencesToRecord < ActiveRecord::Migration
+class AddReferencesToRecord < ActiveRecord::Migration[4.2]
 def self.up
   add_column :records, :reference_id, :integer
 end

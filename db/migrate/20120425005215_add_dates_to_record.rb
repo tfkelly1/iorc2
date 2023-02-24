@@ -1,4 +1,4 @@
-class AddDatesToRecord < ActiveRecord::Migration
+class AddDatesToRecord < ActiveRecord::Migration[4.2]
 def self.up
   add_column :records, :start_date, :datetime
   add_column :records, :end_date, :datetime

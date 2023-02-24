@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery
-  include SentientController
 
+  # TODO: from old version of app
+  # protect_from_forgery
+  # include SentientController
 end

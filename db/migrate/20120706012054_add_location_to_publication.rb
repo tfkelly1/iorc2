@@ -1,4 +1,4 @@
-class AddLocationToPublication < ActiveRecord::Migration
+class AddLocationToPublication < ActiveRecord::Migration[4.2]
 def self.up
   add_column :publications, :location, :string
 end

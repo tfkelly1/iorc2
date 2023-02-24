@@ -1,2 +1,2 @@
-class Title < ActiveRecord::Base
+class Title < ApplicationRecord
 end

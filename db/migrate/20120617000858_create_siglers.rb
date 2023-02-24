@@ -1,4 +1,4 @@
-class CreateSiglers < ActiveRecord::Migration
+class CreateSiglers < ActiveRecord::Migration[4.2]
   def change
     create_table "siglers", :force => true do |t|
        t.integer "record_id"

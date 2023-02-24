@@ -1,4 +1,4 @@
-class AddUserInfoToEntities < ActiveRecord::Migration
+class AddUserInfoToEntities < ActiveRecord::Migration[4.2]
     def change
       add_column :records, :created_by_id, :string
       add_column :records, :updated_by_id, :string

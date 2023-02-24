@@ -1,3 +1,3 @@
-class Taxon < ActiveRecord::Base
+class Taxon < ApplicationRecord
     belongs_to :specific
 end

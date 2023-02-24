@@ -10,11 +10,9 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
-//= require jquery
+//= require jquery3
 //= require jquery_ujs
-//= require jquery-ui
-//= require bootstrap
+//= require datatables.min.js
+//= require zdt_bootstrap
 //= require chosen-jquery
 //= require_tree .
-
-

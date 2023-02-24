@@ -1,4 +1,4 @@
-class CreateTaxons < ActiveRecord::Migration
+class CreateTaxons < ActiveRecord::Migration[4.2]
   def change
     create_table :taxons do |t|
       t.string :scientificname

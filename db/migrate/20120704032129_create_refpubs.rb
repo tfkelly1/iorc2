@@ -1,4 +1,4 @@
-class CreateRefpubs < ActiveRecord::Migration
+class CreateRefpubs < ActiveRecord::Migration[4.2]
   def change
     create_table "refpubs", :force => true do |t|
        t.integer "publication_id"

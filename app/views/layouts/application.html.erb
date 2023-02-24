@@ -2,76 +2,31 @@
 <html>
 <head>
   <title>Iorc2</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-
-
   <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-	<style type="text/css" title="currentStyle">
-
-		
-		#sidebar {
-			float: left;
-			width: 160px;
-		}
-		
-		#header {
-			float: right;
-			width: 820px;
-		}
-		
-		#content {
-			float: right;
-			width: 980px;
-			background-color:#EAEBFF;
-			border-style:solid;
-			border-width:1px;
-		}
-
-		th {text-decoration:underline;}
-		
-		.navbar{
-			margin-bottom: 0px;
-		}
-		
-		#transition-top {
-			height:70px;
-		}
-
-
-	</style>
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+	<%= javascript_include_tag "application", "data-turbo-track": "reload" %>
 
 </head>
+
 <body>
-	<div id="user_nav">
+  <div id="user_nav">
       <% if user_signed_in? %>
         Logged in as <strong><%= current_user.email %></strong>.
       <% else %>
         <%= link_to "Sign up", new_user_registration_path %> |
         <%= link_to "Login", new_user_session_path %>
       <% end %>
+  </div>
+  <div id="page">
+	  <div id="sidebar">
+	    <div id="logo">
+		    <h2><a href="http://www.illinoisbirds.org/">The Illinois Ornithological Research and Data Committee</a></h2>
+	    </div>
     </div>
-<div id="page">
-<div id="sidebar">
-	<div id="logo">
-		<h2><a href="http://www.illinoisbirds.org/">The Illinois Ornithological Research and Data Committee</a></h2>
-	</div>
-
-</div>	<!-- sidebar-->
-
-<div id="header" >
-	<div style="float:right"><img src="http://my-free-css-templates.com/previews/122/images/img08.jpg" width="820" height="220"/></div>	
-</div>
-<div class="navbar">
-    <div class="navbar-inner">
-      <div class="container">
-        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </a>
-        <a class="brand" href="#">IOS</a>
+		<div id="header" >
+			<a href="#">IOS</a>
         <div class="nav-collapse">
           <ul class="nav">
             <li id="rare"><a href="/records">Rare Bird Records</a></li>
@@ -100,13 +55,9 @@
 			<% end %>
           </ul>
         </div><!-- /.nav-collapse -->
-      </div>
-    </div><!-- /navbar-inner -->
+    </div>
+    <%= yield %>
   </div>
-
-
-<%= yield %>
-</div>   <!-- page  -->
 
 </body>
 </html>

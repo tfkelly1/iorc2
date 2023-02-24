@@ -1,10 +1,10 @@
 class RecordsController < ApplicationController
   load_and_authorize_resource
-  
+
   # GET /records
   # GET /records.json
   def index
-    @records = Record.all
+    @records = Record.all.includes(:status, :bird, :counties)
     respond_to do |format|
       format.html
       format.json { render json: RecordTable.new(view_context) }
@@ -39,7 +39,7 @@ class RecordsController < ApplicationController
   def create
     respond_to do |format|
       if @record.save
-        format.html { redirect_to @record, notice: 'Record was successfully created.' }
+        format.html { redirect_to @record, notice: "Record was successfully created." }
         format.json { render json: @record, status: :created, location: @record }
       else
         format.html { render action: "new" }
@@ -53,7 +53,7 @@ class RecordsController < ApplicationController
   def update
     respond_to do |format|
       if @record.update_attributes(params[:record])
-        format.html { redirect_to @record, notice: 'Record was successfully updated.' }
+        format.html { redirect_to @record, notice: "Record was successfully updated." }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -70,5 +70,11 @@ class RecordsController < ApplicationController
       format.html { redirect_to records_url }
       format.json { head :no_content }
     end
+  end
+
+  private
+
+  def record_params
+    params.require(:record).permit(:number, :bird_id, :status_id, :quantity, :start_date, :end_date, :age_gender, :observers, :location, :county_ids, :references, :details)
   end
 end

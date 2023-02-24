@@ -1,204 +1,50 @@
-<style type="text/css" title="currentStyle">
+<script type="text/javascript" charset="utf8">
 
-	@import "http://datatables.net/media/css/header.ccss";
-	@import "http://datatables.net/release-datatables/media/css/demo_table_jui.css";
-
-	th.dpass, td.dpass {display: none;}
-	
-	div.dataTables_length label {
-		float: left;
-		text-align: left;
-	}
-
-	div.dataTables_length select {
-		width: 75px;
-	}
-
-	div.dataTables_filter label {
-		float: right;
-	}
-
-	div.dataTables_info {
-		padding-top: 8px;
-	}
-
-	div.dataTables_paginate {
-		float: right;
-		margin: 0;
-	}
-	
-	tfoot input {
-	    display: block;
-	    margin-left: auto;
-	    margin-right: auto;
-	color: #444;
-	width:80%;
-
-	}
-	
-	tfoot tr {
-		width: auto;
-	}
-	
-	tbody tr td{
-		white-space: nowrap;
-		width: auto;
-	}
-
-	table.table {
-		clear: both;
-		margin-bottom: 6px !important;
-	}
-
-	table.table thead .sorting,
-	table.table thead .sorting_asc,
-	table.table thead .sorting_desc,
-	table.table thead .sorting_asc_disabled,
-	table.table thead .sorting_desc_disabled {
-		cursor: pointer;
-		*cursor: hand;
-	}
-
-	table.table thead .sorting { background: url('images/sort_both.png') no-repeat center right; }
-	table.table thead .sorting_asc { background: url('images/sort_asc.png') no-repeat center right; }
-	table.table thead .sorting_desc { background: url('images/sort_desc.png') no-repeat center right; }
-
-	table.table thead .sorting_asc_disabled { background: url('images/sort_asc_disabled.png') no-repeat center right; }
-	table.table thead .sorting_desc_disabled { background: url('images/sort_desc_disabled.png') no-repeat center right; }
-
-	table.dataTable th:active {
-		outline: none;
-		
-		table.fixed { table-layout:fixed; }
-		table.fixed th { overflow: hidden; }
-		
-	}
-
-	</style>
-
-	
-	<script type="text/javascript" charset="utf8">
-
-
-	var asInitVals = new Array();
-	$(document).ready(function() {
-		var oTable = $('#example').dataTable( {
-				    "sPaginationType": "full_numbers",
-				    "bJQueryUI": true,
-				    "bProcessing": true,
-				    "bServerSide": true,
-				//	"aaSorting": [[ 3, "desc" ], [1, "asc"]],
-					
-				    "sAjaxSource": $('#example').data('source'),
-					"fnInitComplete": function() {
-						this.fnAdjustColumnSizing(true);
-					},
-					"bAutoWidth:": true,
-						aoColumns: [ 
-							     { 'bSortable': true },
-							     { 'bSortable': true },
-							     { 'bSortable': true },
-							 	 { 'bSortable': true },
-								 { 'bSortable': false },
-								 { 'bSortable': false },
-								 { 'sClass': 'dpass'}
-							]
-					})
-						.columnFilter({
-									aoColumns: [ 
-										     { type: "text" },
-										     { type: "text" },
-										     { type: "text" },
-										 	 { type: "text" },
-											 { type: "text" },
-											 { type: "text"},
-											 { type: "text"},
-											 { }
-										]		
-							});
-
-		oTable.fnSort( [ [1,'asc'] ] );					
-		
-		$.extend( $.fn.dataTableExt.oStdClasses, {
-			"sWrapper": "dataTables_wrapper form-inline"
-		} );
-		
-		$('#example input').unbind();
-
-		$("tfoot input").keyup( function (e) {
-			var emptyField = false;
-			if (this.value == null || this.value == '') {
-				emptyField = true;
-			}
-		/* Filter on the column (the index) of this element */
-			if(e.keyCode == 13 || emptyField) {
-				oTable.fnFilter( this.value, $("tfoot input").index(this) );
-			}
-		} );
-
-
-
-		/*
-		* Support functions to provide a little bit of 'user friendlyness' to the textboxes in
-		* the footer
-		*/
-		$("tfoot input").each( function (i) {
-			asInitVals[i] = this.value;
-		} );
-
-		$("tfoot input").focus( function () {
-			if ( this.className == "search_init" )
-			{
-				this.className = "";
-				this.value = "";
-			}
-		});
-
-		$("tfoot input").blur( function (i) {
-			if ( this.value == "" ){
-				this.className = "search_init";
-				this.value = asInitVals[$("tfoot input").index(this)];
-			}
-		});
-	});
-	
-	
-	$(document).on('click', '#example tr', function(){
-	    var nTds = this.getElementsByTagName('td');
-		var tmp = nTds[6].innerHTML;
-		window.location.href = "/records/ " + tmp;
-	});
+  $(document).ready( function () {
+    $('#records-table').DataTable();
+  } );
 </script>
 
-<div id="content">
-
-<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered fixed" id="example" width="100%" data-source="<%= records_url(format: "json") %>">
-
-
+<div>
+<table class="display" style="width:100%" id="records-table">
 	<thead>
   		<tr>
-			<th style=" display: inline !important width: 50px;">Seq</th>
+			  <th style=" display: inline !important width: 50px;">Seq</th>
     		<th>Species</th>
     		<th>Status</th>
-			<th>Year</th>
-			<th>County</th>
-			<th>Reference</th>
-			<th style="display: none;"></th>
+			  <th>Year</th>
+			  <th>County</th>
+			  <th>Reference</th>
+			  <th></th>
   		</tr>
 	</thead>
 
+	<tbody>
+		  <% @records.each do |record| %>
+	  		<tr>
+				  <td><%= record.bird&.sequence %></td>
+			    <td><%= record.bird&.common %></td>
+			    <td><%= record.status&.name %></td>
+			    <td><%= record.start_date.year %></td>
+					<td><%= record.location %></td>
+					<td><%= record.number %></td>
+			    <td><%= link_to "View", record_path(record)%></td>
+	  		</tr>
+		  <% end %>
+	  </tbody>
 
-<tfoot>
-<tr>
-	<th><input type="text" placeholder="Search Sequence" class="search_init" /></th>
-	<th><input type="text" placeholder="Search Taxon" class="search_init" /></th>
-	<th><input type="text" placeholder="Search Status" class="search_init"/></th>
-	<th><input type="text"  placeholder="Search Year" class="search_init"  /></th>
-	<th><input type="text" placeholder="Search County" class="search_init"  /></th>
-	<th><input type="text" placeholder="Search Reference" class="search_init" /></th>
-	<th style="display: none;" ></th>
-</tr>
-</tfoot>
+
+	<tfoot>
+	<!--tr>
+		<th><input type="text" placeholder="Search Sequence" class="search_init" /></th>
+		<th><input type="text" placeholder="Search Taxon" class="search_init" /></th>
+		<th><input type="text" placeholder="Search Status" class="search_init"/></th>
+		<th><input type="text" placeholder="Search Year" class="search_init"  /></th>
+		<th><input type="text" placeholder="Search County" class="search_init"  /></th>
+		<th><input type="text" placeholder="Search Reference" class="search_init" /></th>
+		<th style="display: none;" ></th>
+	</tr-->
+	</tfoot>
 
 
 </table>

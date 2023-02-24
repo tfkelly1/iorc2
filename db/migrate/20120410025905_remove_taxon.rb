@@ -1,4 +1,4 @@
-class RemoveTaxon < ActiveRecord::Migration
+class RemoveTaxon < ActiveRecord::Migration[4.2]
 def self.up
   remove_column :records, :taxon
 end
