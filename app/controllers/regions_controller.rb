@@ -1,3 +1,3 @@
-class RegionsController < InheritedResources::Base
+class RegionsController < ApplicationController
     load_and_authorize_resource
 end

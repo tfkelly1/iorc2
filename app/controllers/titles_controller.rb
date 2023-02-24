@@ -1,2 +1,2 @@
-class TitlesController < InheritedResources::Base
+class TitlesController < ApplicationController
 end

@@ -1,3 +1,3 @@
-class ReferencesController < InheritedResources::Base
-    load_and_authorize_resource
+class ReferencesController < ApplicationController
+  load_and_authorize_resource
 end
