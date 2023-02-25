@@ -55,7 +55,6 @@ gem "devise", "~> 4.9.0"
 # [upgrade guide] https://github.com/heartcombo/devise/wiki/How-To:-Upgrade-to-Devise-4.9.0-%5BHotwire-Turbo-integration%5D
 
 gem "chosen-rails"
-gem "jquery-rails" # jquery3
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
