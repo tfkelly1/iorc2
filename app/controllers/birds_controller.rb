@@ -1,7 +1,6 @@
 class BirdsController < ApplicationController
-  
   load_and_authorize_resource
-  
+
   # GET /birds
   # GET /birds.json
   def index
@@ -39,7 +38,7 @@ class BirdsController < ApplicationController
   def create
     respond_to do |format|
       if @bird.save
-        format.html { redirect_to @bird, notice: 'Bird was successfully created.' }
+        format.html { redirect_to @bird, notice: "Bird was successfully created." }
         format.json { render json: @bird, status: :created, location: @bird }
       else
         format.html { render action: "new" }
@@ -53,7 +52,7 @@ class BirdsController < ApplicationController
   def update
     respond_to do |format|
       if @bird.update_attributes(params[:bird])
-        format.html { redirect_to @bird, notice: 'Bird was successfully updated.' }
+        format.html { redirect_to @bird, notice: "Bird was successfully updated." }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -70,5 +69,11 @@ class BirdsController < ApplicationController
       format.html { redirect_to birds_url }
       format.json { head :no_content }
     end
+  end
+
+  private
+
+  def bird_params
+    params.require(:bird).permit(:common, :scientific, :sequence)
   end
 end
